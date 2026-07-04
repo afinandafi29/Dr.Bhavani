@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pediatric Devices | Dr B's Oro-Hold Dental Lab</title>
+  <meta name="description" content="Safe, biocompatible pediatric dental solutions and diagnostic models designed for early-stage dental health alignment.">
+  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="icon" type="image/png" href="dr logo.png">
+  <style>
+    .page-header-hero {
+      padding: 120px 0 60px 0;
+      background: radial-gradient(circle at top, rgba(198, 162, 101, 0.08) 0%, transparent 60%);
+      text-align: center;
+    }
+    .page-header-hero h1 {
+      font-size: 44px;
+      color: #fff;
+      font-family: var(--font-heading);
+      margin-bottom: 15px;
+    }
+    .page-header-hero p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 17px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .biocompatible-checker-widget {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(198, 162, 101, 0.15);
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .material-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .material-button {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #fff;
+      padding: 16px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .material-button.active, .material-button:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+      box-shadow: 0 0 12px rgba(198, 162, 101, 0.3);
+    }
+    .checker-result-box {
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="dark-theme">
+
+  <!-- Header / Navbar -->
+  <header class="navbar navbar-transparent">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none;">
+        <img src="dr logo.png" alt="Logo" style="height: 80px; width: auto; object-fit: contain;">
+        <span style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+          <span style="font-size: 26px; font-family: var(--font-heading); letter-spacing: 0.05em; color: #ffffff; font-weight: 800; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dr B's Oro-Hold</span>
+          <span style="font-size: 13px; font-family: var(--font-body); letter-spacing: 0.15em; opacity: 1; font-weight: 700; text-transform: uppercase; color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dental Lab</span>
+        </span>
+      </a>
+                <div class="nav-pills-wrapper">
+            <ul class="nav-links nav-pills">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="download-center.html" class="nav-link">Resources</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="nav-cta">
+            <a href="appointment.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); text-transform: none; font-size: 15px;">Book a Call</a>
+          </div>
+      <button class="hamburger" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="page-header-hero">
+    <div class="container">
+      <h1>Pediatric Devices & Space Maintainers</h1>
+      <p>Custom-crafted pediatric interceptive appliances and safe space maintainers, digitally modeled for young patient comfort and biological safety.</p>
+    </div>
+  </section>
+
+  <!-- Dynamic Material Biocompatibility Checker Widget -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="biocompatible-checker-widget">
+        <h3 style="margin-top: 0; color: var(--gold-light); font-size: 22px; margin-bottom: 20px; text-align: center;">Pediatric Materials & Safety Checker</h3>
+        
+        <div class="material-grid">
+          <button class="material-button active" onclick="selectMaterial('nickel-free', 'Nickel-Free Cobalt Chrome (Solid Bands)', 'Certified 100% allergen-free alloy. Excellent elasticity parameters for bands and space-maintenance wire loops. Highly resistant to intraoral wear.')">Nickel-Free Co-Cr</button>
+          <button class="material-button" onclick="selectMaterial('bioplastics', 'Medical-Grade PETG (Retainers & Aligners)', 'Ultra-flexible, bisphenol-A (BPA) free thermoplastic material designed specifically for delicate deciduous and mixed dentition.')">BPA-Free Bioplastics</button>
+          <button class="material-button" onclick="selectMaterial('hypoallergenic', 'Polymethyl Methacrylate (PMMA Plate Appliances)', 'Milled using dense hypoallergenic acrylic blocks. Offers zero residual monomer release, preventing oral tissue sensitivity reactions.')">Hypoallergenic PMMA</button>
+        </div>
+
+        <div class="checker-result-box" id="materialResultBox">
+          <h4 style="margin: 0 0 10px 0; color: var(--gold); font-size: 16px;" id="selectedMaterialTitle">Material: Nickel-Free Cobalt Chrome (Solid Bands)</h4>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.85);" id="materialDescription">
+            Certified 100% allergen-free alloy. Excellent elasticity parameters for bands and space-maintenance wire loops. Highly resistant to intraoral wear.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Staging list -->
+  <section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.03);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 12px; padding: 40px;">
+          <h3 style="color:var(--gold); font-size:22px; margin-top:0; margin-bottom:20px;">Early interceptive Devices</h3>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:rgba(255,255,255,0.85); display:flex; flex-direction:column; gap:16px;">
+            <li><strong style="color: #fff; display:block; margin-bottom:4px;">Unilateral Space Maintainers</strong> Fixed band-and-loop space maintainer custom designed to preserve extraction spaces until premolar eruption.</li>
+            <li><strong style="color: #fff; display:block; margin-bottom:4px;">Habit Corrector Appliances</strong> Custom palatal tongue cribs and thumb-sucking deterrents to intercept early open bite growth abnormalities.</li>
+            <li><strong style="color: #fff; display:block; margin-bottom:4px;">Pediatric Aesthetic Zirconia Crowns</strong> Full coverage tooth-colored zirconia crowns tailored for primary molars.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 style="font-size:32px; color: var(--gold-light); font-family:var(--font-heading); margin-bottom:20px;">Comfort First Staging</h2>
+          <p style="font-size:15px; line-height:1.8; color:rgba(255,255,255,0.7); margin-bottom:25px;">Early stage interceptive dentistry demands perfect patient compliance. We design appliances with reduced dimensions and mirror-polished surface margins to ensure zero tongue irritation and rapid swallowing adjustment.</p>
+          <a href="appointment.html" class="btn btn-secondary">Request Pediatric Design Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h3>Dr B's Oro-Hold Dental Lab</h3>
+        <p>Holding precision behind every great dentist in India. Delivering certified high-accuracy CAD/CAM solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="appointment.html">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>1st Floor, SR Complex, Siddhaiah Puranik Rd, Basaveshwar Nagar, Bengaluru, Karnataka 560079</span>
+          </li>
+          <li>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <a href="tel:+917550134175">+91 7550134175</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Dr B's Oro-Hold Dental Lab. All rights reserved. | <a href="privacy.html" style="color:var(--gold); text-decoration:none;">Privacy Policy</a> | <a href="terms.html" style="color:var(--gold); text-decoration:none; margin-left:10px;">Terms & Conditions</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js?v=11"></script>
+  <script>
+    function selectMaterial(mat, title, desc) {
+      // Toggle active buttons
+      const buttons = document.querySelectorAll(".material-button");
+      buttons.forEach(btn => btn.classList.remove("active"));
+      
+      // Find clicked button
+      event.target.classList.add("active");
+
+      // Update values
+      document.getElementById("selectedMaterialTitle").textContent = "Material: " + title;
+      document.getElementById("materialDescription").textContent = desc;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmetics & Veneers | Dr B's Oro-Hold Dental Lab</title>
+  <meta name="description" content="Hand-layered ceramic veneers, digital smile designs, and cosmetic monolithic zirconia crowns for maximum aesthetic outcomes.">
+  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="icon" type="image/png" href="dr logo.png">
+  <style>
+    .page-header-hero {
+      padding: 120px 0 60px 0;
+      background: radial-gradient(circle at top, rgba(198, 162, 101, 0.08) 0%, transparent 60%);
+      text-align: center;
+    }
+    .page-header-hero h1 {
+      font-size: 44px;
+      color: #fff;
+      font-family: var(--font-heading);
+      margin-bottom: 15px;
+    }
+    .page-header-hero p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 17px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .shade-selector-widget {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(198, 162, 101, 0.15);
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .shade-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    .shade-button {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: #fff;
+      padding: 12px 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .shade-button.active, .shade-button:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+      box-shadow: 0 0 12px rgba(198, 162, 101, 0.3);
+    }
+    .preview-box {
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.3);
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 20px;
+      align-items: center;
+    }
+    .visual-tooth-box {
+      height: 140px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 800;
+      font-size: 28px;
+      color: #000;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
+      transition: all 0.4s ease;
+    }
+    .translucency-slider-container {
+      margin-top: 25px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body class="dark-theme">
+
+  <!-- Header / Navbar -->
+  <header class="navbar navbar-transparent">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none;">
+        <img src="dr logo.png" alt="Logo" style="height: 80px; width: auto; object-fit: contain;">
+        <span style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+          <span style="font-size: 26px; font-family: var(--font-heading); letter-spacing: 0.05em; color: #ffffff; font-weight: 800; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dr B's Oro-Hold</span>
+          <span style="font-size: 13px; font-family: var(--font-body); letter-spacing: 0.15em; opacity: 1; font-weight: 700; text-transform: uppercase; color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dental Lab</span>
+        </span>
+      </a>
+                <div class="nav-pills-wrapper">
+            <ul class="nav-links nav-pills">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="download-center.html" class="nav-link">Resources</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="nav-cta">
+            <a href="appointment.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); text-transform: none; font-size: 15px;">Book a Call</a>
+          </div>
+      <button class="hamburger" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="page-header-hero">
+    <div class="container">
+      <h1>Cosmetics & Veneers</h1>
+      <p>Artistic restorations blending biological structural strength with flawless translucency. Crafted using CAD/CAM zirconia and layered feldspathic porcelain.</p>
+    </div>
+  </section>
+
+  <!-- Shade Guide Simulator Widget -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="shade-selector-widget">
+        <h3 style="margin-top: 0; color: var(--gold-light); font-size: 22px; margin-bottom: 20px; text-align: center;">Shade Translucency & Material Simulator</h3>
+        
+        <div class="shade-grid">
+          <button class="shade-button active" onclick="selectShade('A1', '#f6f1e5', 'HT (High Translucency) Zirconia or IPS E.Max CAD. Ideal for anterior cosmetic crowns.')">A1</button>
+          <button class="shade-button" onclick="selectShade('A2', '#f3ebd4', 'ST (Super Translucency) Multilayer. Universal standard matching most natural Indian teeth.')">A2</button>
+          <button class="shade-button" onclick="selectShade('B1', '#f8f4eb', 'UT (Ultra Translucency) Veneer laminate. Exceptional brightness for natural tooth overlays.')">B1</button>
+          <button class="shade-button" onclick="selectShade('BL2', '#faf8f2', 'Bleach Shade BL2. Bright aesthetic smile designs. Milled with layered translucent cores.')">BL2</button>
+          <button class="shade-button" onclick="selectShade('BL3', '#fcfaf5', 'Bleach Shade BL3. Soft white bleaching shade offering deep enamel emulation.')">BL3</button>
+          <button class="shade-button" onclick="selectShade('BL4', '#fdfbf7', 'Bleach Shade BL4. Brightest white bleach shade. Highly reflective ceramic glaze.')">BL4</button>
+        </div>
+
+        <div class="preview-box">
+          <div class="visual-tooth-box" id="toothVisual" style="background-color: #f6f1e5; opacity: 0.9;">
+            A1
+          </div>
+          <div>
+            <h4 style="margin: 0 0 10px 0; color: var(--gold); font-size: 16px;" id="selectedShadeTitle">Shade: A1</h4>
+            <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.85);" id="shadeDescription">
+              HT (High Translucency) Zirconia or IPS E.Max CAD. Ideal for anterior cosmetic crowns.
+            </p>
+          </div>
+        </div>
+
+        <!-- Translucency Slider Simulator -->
+        <div class="translucency-slider-container">
+          <label style="display:block; font-size:12px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:8px;">Translucency Staging (Opacity level)</label>
+          <input type="range" min="30" max="95" value="85" class="slider" id="opacitySlider" oninput="adjustOpacity(this.value)" style="width:100%; accent-color: var(--gold);">
+          <span style="font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; display:block; text-align: center;">Vary slide to simulate high translucency (glossy enamel overlay) versus high opacity (dentin core blockout)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Details Columns -->
+  <section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.03);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+        <div>
+          <h2 style="font-size:32px; color: var(--gold-light); font-family:var(--font-heading); margin-bottom:20px;">IPS e.max Lithium Disilicate</h2>
+          <p style="font-size:15px; line-height:1.8; color:rgba(255,255,255,0.7); margin-bottom:25px;">The gold standard in aesthetic dentistry. Milled or pressed lithium disilicate glass-ceramics offer 500 MPa strength paired with unmatched optical properties. Ideal for thin veneer laminates, partial crowns, and single-unit anterior prosthetics.</p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:rgba(255,255,255,0.9); display:flex; flex-direction:column; gap:10px;">
+            <li>✓ Minimal preparation width requirement (0.3mm)</li>
+            <li>✓ True lifelike chameleon blending effect</li>
+            <li>✓ Chemically bonds securely to natural enamel</li>
+          </ul>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 12px; padding: 40px;">
+          <h3 style="color:var(--gold); font-size:22px; margin-top:0; margin-bottom:15px;">Aesthetic Quality Protocols</h3>
+          <p style="font-size:14px; line-height:1.7; color:rgba(255,255,255,0.7); margin-bottom:25px;">Our technicians undergo continuous cosmetic training. Every smile restoration is cross-verified under microscope magnifications up to 20x to guarantee seamless margin integrations.</p>
+          <a href="appointment.html" class="btn btn-secondary">Request Smile Analysis Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h3>Dr B's Oro-Hold Dental Lab</h3>
+        <p>Holding precision behind every great dentist in India. Delivering certified high-accuracy CAD/CAM solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="appointment.html">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>1st Floor, SR Complex, Siddhaiah Puranik Rd, Basaveshwar Nagar, Bengaluru, Karnataka 560079</span>
+          </li>
+          <li>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <a href="tel:+917550134175">+91 7550134175</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Dr B's Oro-Hold Dental Lab. All rights reserved. | <a href="privacy.html" style="color:var(--gold); text-decoration:none;">Privacy Policy</a> | <a href="terms.html" style="color:var(--gold); text-decoration:none; margin-left:10px;">Terms & Conditions</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js?v=11"></script>
+  <script>
+    function selectShade(shade, colorCode, desc) {
+      // Toggle active buttons
+      const buttons = document.querySelectorAll(".shade-button");
+      buttons.forEach(btn => btn.classList.remove("active"));
+      
+      // Find clicked button
+      event.target.classList.add("active");
+
+      // Update preview
+      const tooth = document.getElementById("toothVisual");
+      tooth.style.backgroundColor = colorCode;
+      tooth.textContent = shade;
+
+      document.getElementById("selectedShadeTitle").textContent = "Shade: " + shade;
+      document.getElementById("shadeDescription").textContent = desc;
+    }
+
+    function adjustOpacity(val) {
+      const tooth = document.getElementById("toothVisual");
+      // Scale range from 0.3 to 0.95
+      tooth.style.opacity = val / 100;
+    }
+  </script>
+</body>
+</html>

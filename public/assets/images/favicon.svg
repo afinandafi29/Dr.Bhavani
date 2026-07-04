@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Outer Gold Circle -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#C6A265" stroke-width="4" />
+  
+  <!-- Gear Teeth -->
+  <g fill="#C6A265">
+    <rect x="46" y="2" width="8" height="12" rx="2" />
+    <rect x="46" y="86" width="8" height="12" rx="2" />
+    <rect x="2" y="46" width="12" height="8" rx="2" />
+    <rect x="86" y="46" width="12" height="8" rx="2" />
+    <g transform="rotate(45 50 50)">
+      <rect x="46" y="2" width="8" height="12" rx="2" />
+      <rect x="46" y="86" width="8" height="12" rx="2" />
+      <rect x="2" y="46" width="12" height="8" rx="2" />
+      <rect x="86" y="46" width="12" height="8" rx="2" />
+    </g>
+  </g>
+  
+  <!-- Inner Tooth shape in gold -->
+  <path d="M50,25 C42,25 35,28 35,38 C35,46 41,50 43,62 C44,68 40,73 40,78 C40,80 43,80 45,78 C47,75 49,68 50,68 C51,68 53,75 55,78 C57,80 60,80 60,78 C60,73 56,68 57,62 C59,50 65,46 65,38 C65,28 58,25 50,25 Z" fill="#C6A265" />
+</svg>

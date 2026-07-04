@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Dr B's Oro-Hold Dental Lab</title>
+  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="icon" type="image/png" href="dr logo.png">
+  <style>
+    :root {
+      --gold: #c6a265;
+      --gold-light: #e3cca1;
+      --dark-bg: #09090b;
+      --panel-bg: rgba(255, 255, 255, 0.02);
+      --panel-border: rgba(198, 162, 101, 0.12);
+      --glass-blur: blur(16px);
+    }
+    body {
+      background-color: var(--dark-bg);
+      color: #f5f5f7;
+      font-family: 'Inter', -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .admin-container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+    .sidebar {
+      background-color: #050507;
+      border-right: 1px solid var(--panel-border);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .logo-area {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-area img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .nav-item a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .nav-item.active a, .nav-item a:hover {
+      background: rgba(198, 162, 101, 0.1);
+      border: 1px solid var(--panel-border);
+      color: var(--gold-light);
+      box-shadow: 0 4px 12px rgba(198, 162, 101, 0.05);
+    }
+    .main-content {
+      padding: 40px;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 35px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 20px;
+    }
+    .header-bar h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .btn-action {
+      background-color: var(--gold);
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(198, 162, 101, 0.2);
+    }
+    .btn-action:hover {
+      background-color: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(198, 162, 101, 0.3);
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 35px;
+    }
+    .kpi-card {
+      background: var(--panel-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    .kpi-card:hover {
+      border-color: rgba(198, 162, 101, 0.3);
+      transform: translateY(-2px);
+    }
+    .kpi-title {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .kpi-value {
+      font-size: 36px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .kpi-sub {
+      font-size: 12px;
+      color: #34c759;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .dashboard-sections {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    .card-panel {
+      background: var(--panel-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .panel-header h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .search-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 8px 16px;
+      color: #fff;
+      font-size: 13px;
+      width: 220px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .search-input:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.08);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th, td {
+      padding: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 14px;
+    }
+    th {
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .status-milling { background-color: rgba(255, 149, 0, 0.12); color: #ff9500; border: 1px solid rgba(255, 149, 0, 0.2); }
+    .status-glazing { background-color: rgba(90, 200, 250, 0.12); color: #5ac8fa; border: 1px solid rgba(90, 200, 250, 0.2); }
+    .status-shipped { background-color: rgba(52, 199, 89, 0.12); color: #34c759; border: 1px solid rgba(52, 199, 89, 0.2); }
+    .status-cad { background-color: rgba(175, 82, 222, 0.12); color: #af52de; border: 1px solid rgba(175, 82, 222, 0.2); }
+    
+    /* Machine List */
+    .machine-item {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .machine-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .machine-status {
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .indicator-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .indicator-green { background: #34c759; box-shadow: 0 0 8px #34c759; }
+    .indicator-orange { background: #ff9500; box-shadow: 0 0 8px #ff9500; }
+    .indicator-blue { background: #5ac8fa; box-shadow: 0 0 8px #5ac8fa; }
+    
+    .progress-bar-bg {
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px;
+      height: 6px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      background: var(--gold);
+      height: 100%;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* Modal Form styling */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-content {
+      background: #0d0d12;
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      width: 500px;
+      padding: 35px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 12px;
+      color: #fff;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--gold);
+    }
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+    }
+    
+    /* Interactive Simulator Actions */
+    .sim-btn {
+      background: rgba(198, 162, 101, 0.1);
+      border: 1px solid var(--panel-border);
+      color: var(--gold-light);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    .sim-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div>
+        <div class="logo-area">
+          <img src="dr logo.png" alt="Logo">
+          <span>Dr B's Lab</span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item active"><a href="#">Dashboard</a></li>
+          <li class="nav-item"><a href="#orders">Active Orders</a></li>
+          <li class="nav-item"><a href="#machines">Machine Status</a></li>
+          <li class="nav-item"><a href="treatments.html">Treatments Page</a></li>
+          <li class="nav-item"><a href="index.html">Back to Website</a></li>
+        </ul>
+      </div>
+      <div style="font-size: 11px; color: rgba(255,255,255,0.3); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+        Logged in as Administrator
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <div class="header-bar">
+        <h1>Laboratory Dashboard</h1>
+        <button class="btn-action" id="addOrderBtn">Add New Lab Order</button>
+      </div>
+
+      <!-- KPI Metrics Row -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">Active Orders</div>
+          <div class="kpi-value" id="kpiActiveOrders">48</div>
+          <div class="kpi-sub">12% increase this week</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Milled Crowns (Today)</div>
+          <div class="kpi-value" id="kpiMilledToday">72</div>
+          <div class="kpi-sub">100% CAD accuracy</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Milling Unit Status</div>
+          <div class="kpi-value">Normal</div>
+          <div class="kpi-sub">5 units online</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Avg. Turnaround</div>
+          <div class="kpi-value">2.7 Days</div>
+          <div class="kpi-sub">0.2 days efficiency gain</div>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Content Sections -->
+      <div class="dashboard-sections">
+        <!-- Active Milling Queue Panel -->
+        <div class="card-panel" id="orders">
+          <div class="panel-header">
+            <h2>Active Milling Queue</h2>
+            <input type="text" class="search-input" id="searchField" placeholder="Filter by Doctor or Patient...">
+          </div>
+          <div style="overflow-x:auto;">
+            <table id="ordersTable">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Clinician (Dentist)</th>
+                  <th>Patient</th>
+                  <th>Restoration Type</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <!-- Javascript will populate this -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 5-Axis Milling Machine Status Panel -->
+        <div class="card-panel" id="machines">
+          <div class="panel-header">
+            <h2>Milling Machines (5-Axis)</h2>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:20px;" id="machineList">
+            <!-- Programmatically updated machines -->
+          </div>
+          
+          <!-- Quick Courier Request Form Widget -->
+          <div style="margin-top: 35px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px;">
+            <h3 style="margin: 0 0 15px 0; font-size: 16px; color: var(--gold-light);">Schedule Local Pickup</h3>
+            <form id="pickupForm" style="display:flex; flex-direction:column; gap:12px;">
+              <input type="text" id="pickupDoctor" class="search-input" style="width:100%;" placeholder="Clinician Name" required>
+              <input type="text" id="pickupAddress" class="search-input" style="width:100%;" placeholder="Clinic Address Bengaluru" required>
+              <button type="submit" class="btn-action" style="padding:8px 16px; font-size:12px; align-self: flex-start;">Request Courier</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal overlay for creating new order -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-content">
+      <h3 style="margin-top:0; margin-bottom:20px; font-size:20px; color:var(--gold);">Add New Restoration Order</h3>
+      <form id="newOrderForm">
+        <div class="form-group">
+          <label>Clinician (Dentist)</label>
+          <input type="text" id="doctorName" placeholder="Dr. FirstName LastName" required>
+        </div>
+        <div class="form-group">
+          <label>Patient Name</label>
+          <input type="text" id="patientName" placeholder="Patient Name" required>
+        </div>
+        <div class="form-group">
+          <label>Restoration Type</label>
+          <select id="restorationType">
+            <option value="Monolithic Zirconia Crown">Monolithic Zirconia Crown</option>
+            <option value="Custom Titanium Abutment">Custom Titanium Abutment</option>
+            <option value="E.Max Veneer">E.Max Veneer</option>
+            <option value="3-Unit Zirconia Bridge">3-Unit Zirconia Bridge</option>
+            <option value="Clear Aligner Set">Clear Aligner Set</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="closeModalBtn">Cancel</button>
+          <button type="submit" class="btn-action">Create Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Live interactive logic -->
+  <script>
+    // Initial State Database
+    let labOrders = [
+      { id: "OH-9021", doctor: "Dr. Ananya Rao", patient: "S. Sharma", type: "Monolithic Zirconia (Tooth #16)", status: "Milling", progress: 65, machine: "Unit 1" },
+      { id: "OH-9022", doctor: "Dr. Vivek Shetty", patient: "K. Patel", type: "Custom Titanium Abutment (#24)", status: "CAD Design", progress: 0, machine: null },
+      { id: "OH-9023", doctor: "Dr. Priya Nair", patient: "A. Kumar", type: "E.Max Veneer (Tooth #11)", status: "Glazing", progress: 0, machine: null },
+      { id: "OH-9018", doctor: "Dr. Arjun Mehta", patient: "M. Sen", type: "Zirconia Bridge (3 Unit)", status: "Shipped", progress: 100, machine: null }
+    ];
+
+    let millingMachines = [
+      { id: "Unit 1", type: "Zirconia Milling", status: "Milling", targetOrder: "OH-9021", progress: 65 },
+      { id: "Unit 2", type: "PMMA Temporaries", status: "Standby", targetOrder: null, progress: 0 },
+      { id: "Unit 3", type: "Titanium Milling", status: "Calibration", targetOrder: null, progress: 0 },
+      { id: "Unit 4", type: "Ceramics Milling", status: "Standby", targetOrder: null, progress: 0 },
+      { id: "Unit 5", type: "Aligner Trimming", status: "Standby", targetOrder: null, progress: 0 }
+    ];
+
+    // Render Function: Table
+    function renderOrdersTable(filter = "") {
+      const tbody = document.getElementById("ordersTableBody");
+      tbody.innerHTML = "";
+      
+      const filtered = labOrders.filter(order => 
+        order.doctor.toLowerCase().includes(filter.toLowerCase()) || 
+        order.patient.toLowerCase().includes(filter.toLowerCase()) ||
+        order.type.toLowerCase().includes(filter.toLowerCase()) ||
+        order.status.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      filtered.forEach(order => {
+        let statusClass = "status-cad";
+        if(order.status === "Milling") statusClass = "status-milling";
+        else if(order.status === "Glazing") statusClass = "status-glazing";
+        else if(order.status === "Shipped") statusClass = "status-shipped";
+
+        let actionBtn = "";
+        if (order.status === "CAD Design") {
+          actionBtn = `<button class="sim-btn" onclick="startMillingSimulation('${order.id}')">Start Milling</button>`;
+        } else if(order.status === "Milling") {
+          actionBtn = `<span style="font-size:12px; color:rgba(255,255,255,0.4);">Milling in progress...</span>`;
+        } else if(order.status === "Glazing") {
+          actionBtn = `<button class="sim-btn" onclick="shipOrder('${order.id}')">Ship Restorations</button>`;
+        } else {
+          actionBtn = `<span style="font-size:12px; color:var(--gold-light);">Delivered</span>`;
+        }
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>#${order.id}</td>
+          <td style="font-weight:600;">${order.doctor}</td>
+          <td>${order.patient}</td>
+          <td>${order.type}</td>
+          <td><span class="status-badge ${statusClass}">${order.status}</span></td>
+          <td>${actionBtn}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Update active orders count KPI
+      document.getElementById("kpiActiveOrders").textContent = labOrders.filter(o => o.status !== "Shipped").length;
+    }
+
+    // Render Function: Machines List
+    function renderMachines() {
+      const container = document.getElementById("machineList");
+      container.innerHTML = "";
+
+      millingMachines.forEach(machine => {
+        let dotClass = "indicator-green";
+        if (machine.status === "Standby") dotClass = "indicator-blue";
+        else if (machine.status === "Calibration") dotClass = "indicator-orange";
+
+        const div = document.createElement("div");
+        div.className = "machine-item";
+        div.innerHTML = `
+          <div class="machine-header">
+            <span style="font-weight:600; color:#fff;">${machine.id} - ${machine.type}</span>
+            <span class="machine-status">
+              <span class="indicator-dot ${dotClass}"></span>
+              ${machine.status} ${machine.targetOrder ? '(#' + machine.targetOrder + ')' : ''}
+            </span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: ${machine.progress}%;"></div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // Simulation Engine: Milling
+    function startMillingSimulation(orderId) {
+      // Find order
+      const orderIndex = labOrders.findIndex(o => o.id === orderId);
+      if (orderIndex === -1) return;
+
+      // Find available machine
+      const machineIndex = millingMachines.findIndex(m => m.status === "Standby");
+      if (machineIndex === -1) {
+        alert("All milling units are currently loaded. Please wait for an active queue slot.");
+        return;
+      }
+
+      const order = labOrders[orderIndex];
+      const machine = millingMachines[machineIndex];
+
+      // Assign machine
+      order.status = "Milling";
+      order.machine = machine.id;
+      order.progress = 0;
+
+      machine.status = "Milling";
+      machine.targetOrder = order.id;
+      machine.progress = 0;
+
+      renderOrdersTable();
+      renderMachines();
+
+      // Interval simulator
+      const interval = setInterval(() => {
+        order.progress += 20;
+        machine.progress = order.progress;
+        
+        if (order.progress >= 100) {
+          clearInterval(interval);
+          order.status = "Glazing";
+          machine.status = "Standby";
+          machine.targetOrder = null;
+          machine.progress = 0;
+          
+          // Increment Milled count KPI
+          const milledEl = document.getElementById("kpiMilledToday");
+          milledEl.textContent = parseInt(milledEl.textContent) + 1;
+        }
+        
+        renderOrdersTable();
+        renderMachines();
+      }, 1000);
+    }
+
+    // Simulation Engine: Shipping
+    function shipOrder(orderId) {
+      const order = labOrders.find(o => o.id === orderId);
+      if (order) {
+        order.status = "Shipped";
+        renderOrdersTable();
+      }
+    }
+
+    // Modal Events
+    const modal = document.getElementById("orderModal");
+    document.getElementById("addOrderBtn").addEventListener("click", () => modal.classList.add("active"));
+    document.getElementById("closeModalBtn").addEventListener("click", () => modal.classList.remove("active"));
+
+    // Form Event: Create Order
+    document.getElementById("newOrderForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const doc = document.getElementById("doctorName").value;
+      const pat = document.getElementById("patientName").value;
+      const type = document.getElementById("restorationType").value;
+      
+      const newId = "OH-" + Math.floor(9000 + Math.random() * 1000);
+      labOrders.push({
+        id: newId,
+        doctor: doc,
+        patient: pat,
+        type: type,
+        status: "CAD Design",
+        progress: 0,
+        machine: null
+      });
+
+      // Clear & Close
+      document.getElementById("newOrderForm").reset();
+      modal.classList.remove("active");
+      
+      renderOrdersTable();
+    });
+
+    // Form Event: Pickup scheduler
+    document.getElementById("pickupForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const doc = document.getElementById("pickupDoctor").value;
+      const addr = document.getElementById("pickupAddress").value;
+
+      alert(`Pickup request registered! Courier dispatched to ${doc}'s clinic at: ${addr}`);
+      document.getElementById("pickupForm").reset();
+    });
+
+    // Search filter
+    document.getElementById("searchField").addEventListener("input", (e) => {
+      renderOrdersTable(e.target.value);
+    });
+
+    // Initial render
+    renderOrdersTable();
+    renderMachines();
+  </script>
+</body>
+</html>

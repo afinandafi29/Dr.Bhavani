@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Treatments & Solutions | Dr B's Oro-Hold Dental Lab</title>
+  <meta name="description" content="Explore clinical dental treatments supported by Dr B's Oro-Hold: Checkups, Teeth Cleaning, Tooth Fillings, Gum Treatment, and Retainers.">
+  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="icon" type="image/png" href="dr logo.png">
+  <style>
+    .treatment-section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .treatment-section:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .treatment-hero {
+      text-align: center;
+      padding: 100px 0 50px 0;
+      background: radial-gradient(circle at center, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+    }
+    .treatment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .treatment-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .treatment-image {
+        order: -1;
+      }
+    }
+    .treatment-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .treatment-content h2 {
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-family: var(--font-heading);
+    }
+    .treatment-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+    }
+    .treatment-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+    }
+    .treatment-features li {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .treatment-features li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="dark-theme">
+
+  <!-- Header / Navbar -->
+  <header class="navbar navbar-transparent">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none;">
+        <img src="dr logo.png" alt="Logo" style="height: 80px; width: auto; object-fit: contain;">
+        <span style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+          <span style="font-size: 26px; font-family: var(--font-heading); letter-spacing: 0.05em; color: #ffffff; font-weight: 800; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dr B's Oro-Hold</span>
+          <span style="font-size: 13px; font-family: var(--font-body); letter-spacing: 0.15em; opacity: 1; font-weight: 700; text-transform: uppercase; color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dental Lab</span>
+        </span>
+      </a>
+                <div class="nav-pills-wrapper">
+            <ul class="nav-links nav-pills">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="download-center.html" class="nav-link">Resources</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="nav-cta">
+            <a href="appointment.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); text-transform: none; font-size: 15px;">Book a Call</a>
+          </div>
+      <button class="hamburger" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Treatment 1: Dental Checkup -->
+  <section class="treatment-section" id="checkup">
+    <div class="container treatment-grid">
+      <div class="treatment-content">
+        <h2>Dental Checkup</h2>
+        <p>Comprehensive oral evaluations supported by digital imaging and diagnostic laboratory modeling. We partner with clinics to map precise restorations from the initial assessment.</p>
+        <ul class="treatment-features">
+          <li>Detailed intraoral 3D scan alignment analysis</li>
+          <li>High-definition digital diagnosis review</li>
+          <li>Comprehensive care path planning</li>
+        </ul>
+        <a href="appointment.html" class="btn btn-secondary">Schedule Checkup Call</a>
+      </div>
+      <div class="treatment-image">
+        <img src="public/assets/images/checkup.jpg" alt="Dental Checkup">
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment 2: Teeth Cleaning -->
+  <section class="treatment-section" id="cleaning">
+    <div class="container treatment-grid">
+      <div class="treatment-image">
+        <img src="public/assets/images/works_cleaning_1783054714110.png" alt="Teeth Cleaning">
+      </div>
+      <div class="treatment-content">
+        <h2>Teeth Cleaning</h2>
+        <p>Advanced plaque removal, scaling, and polishing to protect natural enamel. Keep your teeth free from bacteria, stains, and periodontal disease with our clinical hygiene workflows.</p>
+        <ul class="treatment-features">
+          <li>Piezoelectric ultra-clean scale removal</li>
+          <li>Enamel-safe stain removal and polish</li>
+          <li>Fluoride protective barrier coating</li>
+        </ul>
+        <a href="appointment.html" class="btn btn-secondary">Book Cleaning Session</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment 3: Tooth Filling -->
+  <section class="treatment-section" id="filling">
+    <div class="container treatment-grid">
+      <div class="treatment-content">
+        <h2>Tooth Filling</h2>
+        <p>Composite restorations and lab-fabricated inlays/onlays. We craft custom restorations that blend perfectly with natural dentition for maximum durability.</p>
+        <ul class="treatment-features">
+          <li>Shade-matched nano-composite fillers</li>
+          <li>Precision CAD/CAM ceramic inlays and onlays</li>
+          <li>High durability and wear-resistant sealing</li>
+        </ul>
+        <a href="appointment.html" class="btn btn-secondary">Request Restoration Call</a>
+      </div>
+      <div class="treatment-image">
+        <img src="public/assets/images/works_implant_1783054737782.png" alt="Tooth Filling">
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment 4: Gum Treatment -->
+  <section class="treatment-section" id="gum-treatment">
+    <div class="container treatment-grid">
+      <div class="treatment-image">
+        <img src="public/assets/images/indian_dentist_clinic.png" alt="Gum Treatment">
+      </div>
+      <div class="treatment-content">
+        <h2>Gum Treatment</h2>
+        <p>Therapy for gingivitis and periodontitis. We help manage gum recession and bone loss using surgical and non-surgical procedures to safeguard your overall oral health.</p>
+        <ul class="treatment-features">
+          <li>Deep scaling and root planing</li>
+          <li>Laser-assisted soft tissue therapy</li>
+          <li>Local antimicrobial diagnostic defense</li>
+        </ul>
+        <a href="appointment.html" class="btn btn-secondary">Consult a Periodontist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment 5: Retainers -->
+  <section class="treatment-section" id="retainers">
+    <div class="container treatment-grid">
+      <div class="treatment-content">
+        <h2>Retainers</h2>
+        <p>Custom orthodontic retainers built using precise digital models to prevent tooth movement and stabilize alignment post-orthodontics.</p>
+        <ul class="treatment-features">
+          <li>Durable thermoformed clear Essix retainers</li>
+          <li>Traditional Hawley retainers with gold-wire highlights</li>
+          <li>Precision fit based on post-treatment 3D meshes</li>
+        </ul>
+        <a href="appointment.html" class="btn btn-secondary">Order Custom Retainers</a>
+      </div>
+      <div class="treatment-image">
+        <img src="public/assets/images/works_straightening_1783054402196.png" alt="Retainers">
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h3>Dr B's Oro-Hold Dental Lab</h3>
+        <p>Holding precision behind every great dentist in India. Delivering certified high-accuracy CAD/CAM solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="appointment.html">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>1st Floor, SR Complex, Siddhaiah Puranik Rd, Basaveshwar Nagar, Bengaluru, Karnataka 560079</span>
+          </li>
+          <li>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <a href="tel:+917550134175">+91 7550134175</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Dr B's Oro-Hold Dental Lab. All rights reserved. | <a href="privacy.html" style="color:var(--gold); text-decoration:none;">Privacy Policy</a> | <a href="terms.html" style="color:var(--gold); text-decoration:none; margin-left:10px;">Terms & Conditions</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js?v=11"></script>
+</body>
+</html>

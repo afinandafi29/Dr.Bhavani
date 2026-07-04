@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implants & Abutments | Dr B's Oro-Hold Dental Lab</title>
+  <meta name="description" content="Titanium and zirconia custom implant abutments milled with optimal emergence profiles and long-term tissue stability.">
+  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="icon" type="image/png" href="dr logo.png">
+  <style>
+    .page-header-hero {
+      padding: 120px 0 60px 0;
+      background: radial-gradient(circle at top, rgba(198, 162, 101, 0.08) 0%, transparent 60%);
+      text-align: center;
+    }
+    .page-header-hero h1 {
+      font-size: 44px;
+      color: #fff;
+      font-family: var(--font-heading);
+      margin-bottom: 15px;
+    }
+    .page-header-hero p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 17px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .checker-widget {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(198, 162, 101, 0.15);
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .checker-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .checker-select {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: #fff;
+      padding: 12px;
+      outline: none;
+      font-size: 14px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    .checker-select:focus {
+      border-color: var(--gold);
+    }
+    .checker-result {
+      background: rgba(198, 162, 101, 0.05);
+      border: 1px solid rgba(198, 162, 101, 0.2);
+      border-radius: 6px;
+      padding: 20px;
+      color: #f5f5f7;
+    }
+    .emergence-slider-container {
+      margin-top: 30px;
+      text-align: left;
+    }
+    .emergence-visual {
+      height: 120px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 6px;
+      margin-top: 15px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .gum-contour {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background: #e08b98;
+      border-radius: 40px 40px 0 0;
+      opacity: 0.6;
+      transition: height 0.3s ease;
+    }
+    .abutment-shape {
+      width: 60px;
+      background: #c6a265;
+      height: 80px;
+      border-radius: 6px 6px 0 0;
+      z-index: 2;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="dark-theme">
+
+  <!-- Header / Navbar -->
+  <header class="navbar navbar-transparent">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none;">
+        <img src="dr logo.png" alt="Logo" style="height: 80px; width: auto; object-fit: contain;">
+        <span style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+          <span style="font-size: 26px; font-family: var(--font-heading); letter-spacing: 0.05em; color: #ffffff; font-weight: 800; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dr B's Oro-Hold</span>
+          <span style="font-size: 13px; font-family: var(--font-body); letter-spacing: 0.15em; opacity: 1; font-weight: 700; text-transform: uppercase; color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dental Lab</span>
+        </span>
+      </a>
+                <div class="nav-pills-wrapper">
+            <ul class="nav-links nav-pills">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="download-center.html" class="nav-link">Resources</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="nav-cta">
+            <a href="appointment.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); text-transform: none; font-size: 15px;">Book a Call</a>
+          </div>
+      <button class="hamburger" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="page-header-hero">
+    <div class="container">
+      <h1>Custom Implant Abutments</h1>
+      <p>Precision-milled titanium and hybrid zirconia abutments engineered for anatomical emergence profiles and long-term bone/tissue stability.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Compatibility Checker Widget -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="checker-widget">
+        <h3 style="margin-top: 0; color: var(--gold-light); font-size: 22px; margin-bottom: 20px; text-align: center;">Implant Compatibility & Emergence Staging</h3>
+        <div class="checker-grid">
+          <div>
+            <label style="display:block; font-size:12px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:8px;">Implant Connection Brand</label>
+            <select class="checker-select" id="implantBrand" onchange="runCompatibilityCheck()">
+              <option value="nobel">Nobel Biocare (Active/Replace)</option>
+              <option value="straumann">Straumann (Bone Level/SynOcta)</option>
+              <option value="zimmer">Zimmer Biomet (Tapered Screw-Vent)</option>
+              <option value="mis">MIS Implants (Seven/C1)</option>
+              <option value="osstem">Osstem / Hiossen (TSIII)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; font-size:12px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:8px;">Abutment Material</label>
+            <select class="checker-select" id="abutmentMaterial" onchange="runCompatibilityCheck()">
+              <option value="titanium">Grade 5 Titanium (High Load-Bearing)</option>
+              <option value="zirconia">Hybrid Custom Zirconia (Aesthetic Zone)</option>
+              <option value="cobalt">Cobalt-Chrome Screw-Retained Bar</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="checker-result" id="checkResultBox">
+          <h4 style="margin: 0 0 10px 0; color: var(--gold); font-size: 16px;">Compatibility Status: Guaranteed Fit</h4>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.85);" id="checkResultText">
+            Our library contains certified original pre-milled blanks for Nobel Biocare. Milled with 5-axis accuracy with tolerance under 5 microns.
+          </p>
+        </div>
+
+        <!-- Interactive emergence profile customizer -->
+        <div class="emergence-slider-container">
+          <label style="display:block; font-size:12px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:8px;">Emergence Profile Contour Angle</label>
+          <input type="range" min="30" max="75" value="45" class="slider" id="emergenceSlider" oninput="adjustEmergenceProfile(this.value)" style="width:100%; accent-color: var(--gold);">
+          <div class="emergence-visual">
+            <div class="gum-contour" id="gumContour" style="height: 45px;"></div>
+            <div class="abutment-shape" id="abutmentShape" style="width: 45px;"></div>
+          </div>
+          <span style="font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 10px; display:block; text-align: center;">Move slider to simulate emergence tissue widening</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.03);">
+    <div class="container">
+      <div class="services-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+        <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-scale="1.05" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius:12px; padding:30px;">
+          <h3 style="color: var(--gold); font-size: 20px; margin-bottom: 15px;">Titanium Custom Abutments</h3>
+          <p style="font-size:14px; line-height:1.7; color: rgba(255,255,255,0.7); margin-bottom: 20px;">Ideal for posterior molar restorations requiring maximum strength and vertical loading support. Includes precise positioning keys.</p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:rgba(255,255,255,0.9);">
+            <li style="margin-bottom:8px;">✓ Medical Grade 5 Titanium</li>
+            <li style="margin-bottom:8px;">✓ Custom emergence contours</li>
+            <li>✓ Fits all major connection types</li>
+          </ul>
+        </div>
+        <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-scale="1.05" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius:12px; padding:30px;">
+          <h3 style="color: var(--gold); font-size: 20px; margin-bottom: 15px;">Hybrid Zirconia Abutments</h3>
+          <p style="font-size:14px; line-height:1.7; color: rgba(255,255,255,0.7); margin-bottom: 20px;">Premium option for anterior aesthetic zones. A translucent zirconia body is bonded securely to a precision-fit titanium base.</p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:rgba(255,255,255,0.9);">
+            <li style="margin-bottom:8px;">✓ Perfect tissue coloring match</li>
+            <li style="margin-bottom:8px;">✓ Prevents grey gingival margins</li>
+            <li>✓ Extreme biological compatibility</li>
+          </ul>
+        </div>
+        <div class="service-card" data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-scale="1.05" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius:12px; padding:30px;">
+          <h3 style="color: var(--gold); font-size: 20px; margin-bottom: 15px;">Implant Bars & Bridges</h3>
+          <p style="font-size:14px; line-height:1.7; color: rgba(255,255,255,0.7); margin-bottom: 20px;">Screw-retained multi-unit framework structures milled from solid titanium or cobalt-chrome disks to secure full-arch restorations.</p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:rgba(255,255,255,0.9);">
+            <li style="margin-bottom:8px;">✓ Passive fit alignment guarantee</li>
+            <li style="margin-bottom:8px;">✓ High flexural stress tolerance</li>
+            <li>✓ Perfect vertical dimension preservation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h3>Dr B's Oro-Hold Dental Lab</h3>
+        <p>Holding precision behind every great dentist in India. Delivering certified high-accuracy CAD/CAM solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="appointment.html">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>1st Floor, SR Complex, Siddhaiah Puranik Rd, Basaveshwar Nagar, Bengaluru, Karnataka 560079</span>
+          </li>
+          <li>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <a href="tel:+917550134175">+91 7550134175</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Dr B's Oro-Hold Dental Lab. All rights reserved. | <a href="privacy.html" style="color:var(--gold); text-decoration:none;">Privacy Policy</a> | <a href="terms.html" style="color:var(--gold); text-decoration:none; margin-left:10px;">Terms & Conditions</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js?v=11"></script>
+  <script>
+    function runCompatibilityCheck() {
+      const brand = document.getElementById("implantBrand").value;
+      const mat = document.getElementById("abutmentMaterial").value;
+      const textEl = document.getElementById("checkResultText");
+
+      let brandName = "Nobel Biocare";
+      if(brand === "straumann") brandName = "Straumann";
+      else if(brand === "zimmer") brandName = "Zimmer Biomet";
+      else if(brand === "mis") brandName = "MIS Implants";
+      else if(brand === "osstem") brandName = "Osstem / Hiossen";
+
+      let matName = "Grade 5 Titanium";
+      if(mat === "zirconia") matName = "Hybrid Zirconia Custom Abutment";
+      else if(mat === "cobalt") matName = "Cobalt-Chrome Screw-Retained Bar";
+
+      textEl.textContent = `Guaranteed passive fit compatibility established for ${brandName} platforms utilizing ${matName}. Designs are simulated inside 3Shape CAD with official original manufacturer interface libraries, milling tolerance under 5 microns.`;
+    }
+
+    function adjustEmergenceProfile(val) {
+      const abutment = document.getElementById("abutmentShape");
+      const gum = document.getElementById("gumContour");
+      
+      // Update width based on slider value
+      abutment.style.width = val + "px";
+      gum.style.height = (40 + (val - 45)/2) + "px";
+    }
+
+    // Initial trigger
+    runCompatibilityCheck();
+  </script>
+</body>
+</html>
