@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large generated AI slide images (copy locally via copy_assets.sh)
+public/assets/images/slide_*.png
+public/assets/images/indian_*.png
+public/assets/images/dental_*.png
+public/assets/images/happy_smile.png
+public/assets/images/first_slide.png

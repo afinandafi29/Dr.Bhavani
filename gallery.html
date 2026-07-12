@@ -19,13 +19,13 @@
   <!-- Header / Navbar -->
   <header class="navbar navbar-transparent">
     <div class="container nav-container">
-      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none;">
-        <img src="dr logo.png" alt="Logo" style="height: 80px; width: auto; object-fit: contain;">
-        <span style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
-          <span style="font-size: 26px; font-family: var(--font-heading); letter-spacing: 0.05em; color: #ffffff; font-weight: 800; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dr B's Oro-Hold</span>
-          <span style="font-size: 13px; font-family: var(--font-body); letter-spacing: 0.15em; opacity: 1; font-weight: 700; text-transform: uppercase; color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Dental Lab</span>
-        </span>
-      </a>
+      <a href="index.html" class="logo-container">
+            <img src="dr logo.png" alt="Logo">
+            <span class="logo-text-block">
+              <span class="logo-primary">Dr B's</span>
+              <span class="logo-brand">Oro-Hold Dental Lab</span>
+            </span>
+          </a>
                 <div class="nav-pills-wrapper">
             <ul class="nav-links nav-pills">
               <li><a href="index.html" class="nav-link">Home</a></li>
@@ -80,11 +80,11 @@
         <div class="swiper-wrapper">
 
         <!-- Item 1 -->
-        <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="smile-makeovers">
-          <img src="public/assets/images/welcome.jpg" alt="Full Arch Zirconia Restoration">
+        <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="technology">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800" alt="Advanced CAD/CAM Dental Lab Milling">
           <div class="gallery-item-overlay">
-            <span class="gallery-item-cat">Smile Makeovers</span>
-            <h3 class="gallery-item-title">Full Arch Zirconia Rehabilitation</h3>
+            <span class="gallery-item-cat">Technology</span>
+            <h3 class="gallery-item-title">State-of-the-Art Dental CAD/CAM Lab Milling</h3>
           </div>
         </div>
 
@@ -108,28 +108,28 @@
 
         <!-- Item 4 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="smile-makeovers">
-          <img src="public/assets/images/cosmetic.jpg" alt="Premium Cosmetic Veneers">
+          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=800" alt="Natural Healthy Smile Design Makeover">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Smile Makeovers</span>
-            <h3 class="gallery-item-title">Premium Cosmetic Veneers</h3>
+            <h3 class="gallery-item-title">Natural Smile Design Makeover</h3>
           </div>
         </div>
 
         <!-- Item 5 -->
-        <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="technology">
-          <img src="public/assets/images/crowns.jpg" alt="Modern Sterilization Chamber">
+        <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="clinic">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800" alt="Modern Sterilization & Nursing Support">
           <div class="gallery-item-overlay">
-            <span class="gallery-item-cat">Technology</span>
-            <h3 class="gallery-item-title">Modern Sterilization Chamber</h3>
+            <span class="gallery-item-cat">Clinic</span>
+            <h3 class="gallery-item-title">Clinical Nursing & Sterilization Support</h3>
           </div>
         </div>
 
         <!-- Item 6 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="clinic">
-          <img src="public/assets/images/welcome.jpg" alt="State-of-the-Art Operations Room">
+          <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=800" alt="State-of-the-Art Modern Dental Clinic Lobby">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Clinic</span>
-            <h3 class="gallery-item-title">State-of-the-Art Operations Room</h3>
+            <h3 class="gallery-item-title">State-of-the-Art Modern Dental Clinic Lobby</h3>
           </div>
         </div>
 
@@ -207,6 +207,9 @@
     </div>
   </footer>
 
+  <!-- GSAP Core and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="main.js?v=11"></script>
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();

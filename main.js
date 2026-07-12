@@ -31,56 +31,58 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dynamic Hero Slide Text Data (10 Slides mapping to the relevant restorations)
   const heroTextData = [
     {
-      subtitle: "Premium Restorations Lab",
-      title: "Precision Dental Lab Trusted by Dentists Across India",
-      desc: "Delivering premium crowns, bridges, aligners, dentures, implants, and digital dental solutions with unmatched accuracy, quality, and fast turnaround."
+      subtitle: "Precision Examination",
+      title: "Every Detail Matters, Every Tooth Counts",
+      desc: "Our experts use advanced dental mirrors and precision probes to deliver comprehensive examinations with unmatched clinical accuracy."
     },
     {
-      subtitle: "Advanced Digital Dentistry",
-      title: "Where Every Smile Begins with Precision",
-      desc: "Supporting dentists with world-class dental laboratory solutions powered by skilled technicians, advanced technology, and exceptional craftsmanship."
+      subtitle: "Pediatric Dentistry",
+      title: "Friendly Care for Your Little Ones",
+      desc: "Creating happy, fear-free dental experiences for children with our specialized pediatric team and kid-friendly clinical environment."
     },
     {
-      subtitle: "Trusted Across India",
-      title: "India's Trusted Dental Laboratory Partner",
-      desc: "Creating beautiful, natural-looking restorations that help dentists deliver confident smiles every day."
+      subtitle: "Digital Technology",
+      title: "High-Tech 3D Digital Scanning",
+      desc: "Using state-of-the-art CBCT and intraoral scanners to create precise digital models for diagnosis and treatment planning."
     },
     {
-      subtitle: "Perfect Precision Outcomes",
-      title: "Digital Dentistry. Perfect Precision. Reliable Results.",
-      desc: "From intraoral scans to final restorations, we combine innovation and expertise for outstanding outcomes."
+      subtitle: "Master Craftsmanship",
+      title: "Dental Lab Precision Crown Crafting",
+      desc: "Our lab technicians hand-layer every ceramic crown under magnification, ensuring perfect color match and anatomical accuracy."
     },
     {
-      subtitle: "Aesthetic Smile Designs",
-      title: "Flawless Cosmetics & Hand-Layered Veneers",
-      desc: "Emulating natural tooth translucency and brightness using premium materials for stunning aesthetic transformations."
-    },
-    {
-      subtitle: "Custom Implantology",
-      title: "Milled Titanium & Hybrid Abutments",
-      desc: "Guaranteeing passive fit and anatomically correct emergence profiles compatible with all major implant connection systems."
+      subtitle: "Surgical Excellence",
+      title: "Expert Implant Surgical Team",
+      desc: "A fully certified surgical team performing implant placements in a sterile, medically equipped operating environment."
     },
     {
       subtitle: "Orthodontic Innovation",
-      title: "Oro-Align Practically Invisible Aligners",
-      desc: "Biocompatible, sequence-labeled clear aligner systems staged using advanced tooth movement simulation software."
+      title: "Clear Aligner Consultation",
+      desc: "Offering Oro-Align invisible clear aligner solutions with digital smile simulations and personalized treatment staging."
     },
     {
-      subtitle: "Monolithic Restorations",
-      title: "High-Strength Sintered Zirconia Crowns",
-      desc: "Engineered to withstand up to 1200 MPa of load while retaining natural warmth and margin integrity."
+      subtitle: "Premium Facility",
+      title: "Welcoming Modern Waiting Area",
+      desc: "Our premium reception space is designed to put you at ease — calm, clean, contemporary, and fully air-conditioned."
     },
     {
-      subtitle: "Digital Denture Solutions",
-      title: "Next-Gen Removables & High-Impact Bases",
-      desc: "Offering precise CAD suction fitting and biocompatible hypoallergenic acrylic bases for patient comfort."
+      subtitle: "Medical-Grade Hygiene",
+      title: "Sterile Instrument Processing",
+      desc: "Maintaining the highest sterilization standards with autoclave-processed instruments and single-use consumables for every patient."
     },
     {
-      subtitle: "Expert Clinical Collaboration",
-      title: "Dedicated B2B Technical Design Support",
-      desc: "Working hand-in-hand with clinical practices to plan, mill, and deliver complex restorations successfully."
+      subtitle: "Teamwork & Care",
+      title: "Dedicated Chairside Nurse Support",
+      desc: "Our trained dental nurses assist with precision and compassion, ensuring seamless clinical flow and patient comfort throughout."
+    },
+    {
+      subtitle: "Aesthetic Outcomes",
+      title: "Confident Smiles After Every Visit",
+      desc: "Leaving our patients not just treated, but truly transformed — with brighter, healthier, and more confident smiles."
     }
   ];
+
+  let isFirstLoad = true;
 
   function updateHeroText(index) {
     const subtitleEl = document.querySelector('.hero-subtitle');
@@ -88,21 +90,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const descEl = document.querySelector('.hero-desc');
     
     if (subtitleEl && titleEl && descEl && heroTextData[index]) {
-      subtitleEl.textContent = heroTextData[index].subtitle;
-      titleEl.innerHTML = heroTextData[index].title;
-      descEl.textContent = heroTextData[index].desc;
+      if (typeof gsap !== 'undefined') {
+        gsap.timeline()
+          .to([subtitleEl, titleEl, descEl], { opacity: 0, y: -10, duration: 0.2, stagger: 0.04, onComplete: () => {
+            subtitleEl.textContent = heroTextData[index].subtitle;
+            titleEl.innerHTML = heroTextData[index].title;
+            descEl.textContent = heroTextData[index].desc;
+          }})
+          .to([subtitleEl, titleEl, descEl], { opacity: 1, y: 0, duration: 0.3, stagger: 0.04, ease: 'power2.out' });
+      } else {
+        subtitleEl.textContent = heroTextData[index].subtitle;
+        titleEl.innerHTML = heroTextData[index].title;
+        descEl.textContent = heroTextData[index].desc;
+      }
     }
   }
 
-    function showSlide(index) {
-      updateHeroText(index);
-      slides.forEach(slide => slide.classList.remove('active'));
-      indicators.forEach(ind => ind.classList.remove('active'));
-      
-      slides[index].classList.add('active');
-      if (indicators[index]) {
-        indicators[index].classList.add('active');
+  function showSlide(index) {
+    if (isFirstLoad) {
+      const subtitleEl = document.querySelector('.hero-subtitle');
+      const titleEl = document.querySelector('.hero-title');
+      const descEl = document.querySelector('.hero-desc');
+      if (subtitleEl && titleEl && descEl && heroTextData[index]) {
+        subtitleEl.textContent = heroTextData[index].subtitle;
+        titleEl.innerHTML = heroTextData[index].title;
+        descEl.textContent = heroTextData[index].desc;
       }
+      isFirstLoad = false;
+    } else {
+      updateHeroText(index);
+    }
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(ind => ind.classList.remove('active'));
+    
+    slides[index].classList.add('active');
+    if (indicators[index]) {
+      indicators[index].classList.add('active');
+    }
 
       // Update active-num in bottom bar
       const activeNumEl = document.querySelector('.active-num');
@@ -315,20 +339,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // Credentials Skill Bar Animations on viewport enter
   const skillBars = document.querySelectorAll('.skill-bar-inner');
   if (skillBars.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const bar = entry.target;
-          const targetPercent = bar.getAttribute('data-percent');
-          bar.style.width = targetPercent + '%';
-          observer.unobserve(bar);
-        }
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      skillBars.forEach(bar => {
+        const percent = bar.getAttribute('data-percent');
+        bar.style.width = '0%'; // Reset for animation
+        gsap.to(bar, {
+          scrollTrigger: {
+            trigger: bar,
+            start: 'top 95%',
+            toggleActions: 'play none none none',
+          },
+          width: percent + '%',
+          duration: 1.5,
+          ease: 'power3.out'
+        });
       });
-    }, { threshold: 0.1 });
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bar = entry.target;
+            const targetPercent = bar.getAttribute('data-percent');
+            bar.style.width = targetPercent + '%';
+            observer.unobserve(bar);
+          }
+        });
+      }, { threshold: 0.1 });
 
-    skillBars.forEach(bar => {
-      observer.observe(bar);
-    });
+      skillBars.forEach(bar => {
+        observer.observe(bar);
+      });
+    }
   }
 
   // ==========================================================================
@@ -1167,5 +1208,56 @@ document.addEventListener('DOMContentLoaded', () => {
         clickable: true,
       }
     });
+  }
+
+  // ==========================================================================
+  // GSAP PREMIUM UI/UX ANIMATIONS
+  // ==========================================================================
+  if (typeof gsap !== 'undefined') {
+    // Register ScrollTrigger plugin
+    if (typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    // 1. Hero Load Animations
+    if (document.querySelector('.hero-subtitle')) {
+      const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      heroTl.from('.hero-subtitle', { y: 20, opacity: 0, duration: 0.6 })
+            .from('.hero-title', { y: 30, opacity: 0, duration: 0.8 }, '-=0.4')
+            .from('.hero-desc', { y: 20, opacity: 0, duration: 0.6 }, '-=0.4')
+            .from('.btn-book-arrow', { y: 15, opacity: 0, duration: 0.5 }, '-=0.3')
+            .from('.hero-floating-tags', { x: 30, opacity: 0, duration: 0.8 }, '-=0.5');
+    }
+
+    // 2. Navbar Logo and CTA Load Animation
+    if (document.querySelector('.logo-container')) {
+      gsap.from('.logo-container', { x: -30, opacity: 0, duration: 0.8, ease: 'power3.out' });
+    }
+    if (document.querySelector('.nav-links li')) {
+      gsap.from('.nav-links li', { y: -15, opacity: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' });
+    }
+    if (document.querySelector('.nav-cta')) {
+      gsap.from('.nav-cta', { x: 30, opacity: 0, duration: 0.8, ease: 'power3.out' });
+    }
+
+    // 3. Scroll Reveal for Sections & Cards (using ScrollTrigger)
+    if (typeof ScrollTrigger !== 'undefined') {
+      // Section Headers reveal
+      gsap.utils.toArray('.section-header').forEach(header => {
+        gsap.from(header, {
+          scrollTrigger: {
+            trigger: header,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out'
+        });
+      });
+
+      // Card animations removed to guarantee instant visibility on load
+    }
   }
 });
