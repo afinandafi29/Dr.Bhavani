@@ -20,20 +20,26 @@
               <span class="logo-brand">Oro-Hold Dental Lab</span>
             </span>
           </a>
-          <div class="nav-pills-wrapper">
-            <ul class="nav-links nav-pills" style="align-items: center; margin: 0;">
+          <div class="nav-pills-wrapper" style="position: relative; flex-grow: 1; display: flex; justify-content: center; align-items: center;">
+            <ul class="nav-links nav-pills" id="navLinksList" style="align-items: center; margin: 0; width: 100%; justify-content: center; transition: opacity 0.3s; gap: 8px;">
+              <li>
+                <a href="#" id="inlineSearchBtn" class="nav-link" aria-label="Search" style="padding: 10px 15px; display: flex; align-items: center; justify-content: center;">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 0 1 6.32 12.9l4.39 4.39a1 1 0 0 1-1.42 1.42l-4.39-4.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"></path></svg>
+                </a>
+              </li>
               <li><a href="index.html" class="nav-link">Home</a></li>
               <li><a href="about.html" class="nav-link">About</a></li>
               <li><a href="services.html" class="nav-link">Services</a></li>
               <li><a href="contact.html" class="nav-link">Contact</a></li>
               <li><a href="admin.html" class="nav-link">Login</a></li>
-              <li>
-                <a href="#" id="globalSearchBtn" class="nav-link" aria-label="Search" style="padding: 10px 15px; display: flex; align-items: center; justify-content: center;">
-                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 0 1 6.32 12.9l4.39 4.39a1 1 0 0 1-1.42 1.42l-4.39-4.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"></path></svg>
-                </a>
-              </li>
               <li><a href="appointment.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 30px; font-weight: 600; text-transform: none; font-size: 14px; margin: 0; display: inline-flex; align-items: center; justify-content: center; height: 100%; box-sizing: border-box; line-height: normal;">Book a Call</a></li>
             </ul>
+            <div id="inlineSearchContainer" style="display: none; position: absolute; width: 100%; max-width: 500px; z-index: 100; align-items: center; background: rgba(0,0,0,0.8); border: 1px solid rgba(198,162,101,0.5); border-radius: 30px; padding: 5px 20px;">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg" style="color:var(--gold);"><path d="M10 2a8 8 0 0 1 6.32 12.9l4.39 4.39a1 1 0 0 1-1.42 1.42l-4.39-4.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"></path></svg>
+              <input type="text" id="inlineSearchInput" placeholder="Search treatments, services, or ask AI..." autocomplete="off" style="flex-grow: 1; background: transparent; border: none; color: white; padding: 8px 12px; outline: none; font-size: 15px;">
+              <button id="closeInlineSearchBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 24px; line-height: 1;">&times;</button>
+              <div id="inlineSearchResults" style="position: absolute; top: 130%; left: 0; width: 100%; background: var(--dark); border: 1px solid rgba(198,162,101,0.3); border-radius: 12px; max-height: 350px; overflow-y: auto; box-shadow: 0 15px 40px rgba(0,0,0,0.9); display: none; flex-direction: column;"></div>
+            </div>
           </div>
           <button class="hamburger" aria-label="Toggle Navigation">
             <span></span>
@@ -48,7 +54,7 @@
     <div class="container" style="max-width: 800px;">
       <span class="hero-subtitle" style="color: #ff4d4d; text-shadow: 0 0 10px rgba(255, 77, 77, 0.3);">24/7 Relief Station</span>
       <h1 style="font-size: 48px; margin-bottom: 20px; font-family: var(--font-heading);">Emergency Dental Care</h1>
-      <p style="font-size: 18px; font-weight: 300; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 40px;">Are you suffering from severe tooth pain, a broken crown, or dental trauma? Don't wait. Our network of emergency clinics offers immediate same-day appointments to relieve your pain.</p>
+      <p style="font-size: 18px; font-weight: 300; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 40px;">Are you suffering from severe tooth pain, a broken crown, or dental trauma? Don't wait. Our network of emergency dental labs offers immediate same-day appointments to relieve your pain.</p>
       
       <div class="emergency-box" style="background: rgba(255, 77, 77, 0.1); border: 1px solid rgba(255, 77, 77, 0.3); border-radius: 16px; padding: 40px; margin-bottom: 40px; backdrop-filter: blur(10px);">
         <h2 style="color: #ff4d4d; font-size: 28px; margin-bottom: 15px;">Immediate Assistance Hotline</h2>
@@ -68,7 +74,7 @@
     <div class="container" style="max-width: 1000px;">
       <div class="section-header">
         <h2>Common Dental Emergencies</h2>
-        <p>Learn what to do in case of a dental emergency before you arrive at the clinic.</p>
+        <p>Learn what to do in case of a dental emergency before you arrive at the dental lab.</p>
       </div>
 
       <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">

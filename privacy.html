@@ -19,20 +19,26 @@
               <span class="logo-brand">Oro-Hold Dental Lab</span>
             </span>
           </a>
-          <div class="nav-pills-wrapper">
-            <ul class="nav-links nav-pills" style="align-items: center; margin: 0;">
+          <div class="nav-pills-wrapper" style="position: relative; flex-grow: 1; display: flex; justify-content: center; align-items: center;">
+            <ul class="nav-links nav-pills" id="navLinksList" style="align-items: center; margin: 0; width: 100%; justify-content: center; transition: opacity 0.3s; gap: 8px;">
+              <li>
+                <a href="#" id="inlineSearchBtn" class="nav-link" aria-label="Search" style="padding: 10px 15px; display: flex; align-items: center; justify-content: center;">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 0 1 6.32 12.9l4.39 4.39a1 1 0 0 1-1.42 1.42l-4.39-4.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"></path></svg>
+                </a>
+              </li>
               <li><a href="index.html" class="nav-link">Home</a></li>
               <li><a href="about.html" class="nav-link">About</a></li>
               <li><a href="services.html" class="nav-link">Services</a></li>
               <li><a href="contact.html" class="nav-link">Contact</a></li>
               <li><a href="admin.html" class="nav-link">Login</a></li>
-              <li>
-                <a href="#" id="globalSearchBtn" class="nav-link" aria-label="Search" style="padding: 10px 15px; display: flex; align-items: center; justify-content: center;">
-                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 0 1 6.32 12.9l4.39 4.39a1 1 0 0 1-1.42 1.42l-4.39-4.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"></path></svg>
-                </a>
-              </li>
               <li><a href="appointment.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 30px; font-weight: 600; text-transform: none; font-size: 14px; margin: 0; display: inline-flex; align-items: center; justify-content: center; height: 100%; box-sizing: border-box; line-height: normal;">Book a Call</a></li>
             </ul>
+            <div id="inlineSearchContainer" style="display: none; position: absolute; width: 100%; max-width: 500px; z-index: 100; align-items: center; background: rgba(0,0,0,0.8); border: 1px solid rgba(198,162,101,0.5); border-radius: 30px; padding: 5px 20px;">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg" style="color:var(--gold);"><path d="M10 2a8 8 0 0 1 6.32 12.9l4.39 4.39a1 1 0 0 1-1.42 1.42l-4.39-4.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"></path></svg>
+              <input type="text" id="inlineSearchInput" placeholder="Search treatments, services, or ask AI..." autocomplete="off" style="flex-grow: 1; background: transparent; border: none; color: white; padding: 8px 12px; outline: none; font-size: 15px;">
+              <button id="closeInlineSearchBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 24px; line-height: 1;">&times;</button>
+              <div id="inlineSearchResults" style="position: absolute; top: 130%; left: 0; width: 100%; background: var(--dark); border: 1px solid rgba(198,162,101,0.3); border-radius: 12px; max-height: 350px; overflow-y: auto; box-shadow: 0 15px 40px rgba(0,0,0,0.9); display: none; flex-direction: column;"></div>
+            </div>
           </div>
           <button class="hamburger" aria-label="Toggle Navigation">
             <span></span>
@@ -53,7 +59,7 @@
         <div style="color: #ffffff; line-height: 1.8; font-size: 16px;">
           
 <h2 style="color: var(--gold); margin-top: 20px;">1. Introduction</h2>
-<p>At Dr B's Oro-Hold Dental Lab, accessible from our clinic, one of our main priorities is the privacy of our patients. This Privacy Policy document contains types of information that is collected and recorded by us and how we use it.</p>
+<p>At Dr B's Oro-Hold Dental Lab, accessible from our dental lab, one of our main priorities is the privacy of our patients. This Privacy Policy document contains types of information that is collected and recorded by us and how we use it.</p>
 
 <h2 style="color: var(--gold); margin-top: 20px;">2. Information We Collect</h2>
 <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>
@@ -62,7 +68,7 @@
 <h2 style="color: var(--gold); margin-top: 20px;">3. How We Use Your Information</h2>
 <p>We use the information we collect in various ways, including to:</p>
 <ul>
-    <li style="margin-bottom: 10px;">Provide, operate, and maintain our clinic and services</li>
+    <li style="margin-bottom: 10px;">Provide, operate, and maintain our dental lab and services</li>
     <li style="margin-bottom: 10px;">Improve, personalize, and expand our patient experience</li>
     <li style="margin-bottom: 10px;">Understand and analyze how you use our website</li>
     <li style="margin-bottom: 10px;">Develop new services, features, and functionality</li>

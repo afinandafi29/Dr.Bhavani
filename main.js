@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       subtitle: "Modern Facilities",
-      title: "Step Into Our Premium Dental Clinic",
+      title: "Step Into Our Premium Dental Dental Lab",
       desc: "Relax in our comfortable waiting lounge, equipped with next-generation sterilization technology and advanced dental chairs."
     }
   ];
@@ -518,27 +518,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const botDatabase = {
     en: {
       welcome: "Hello! I am your Oro Hold AI Assistant. How can I help you today?",
-      default: "Thank you for contacting Oro Hold Lab Support. For custom orders, please upload scans via the Dentist Portal or connect directly to a technician on WhatsApp (+91 9108527755)."
-    },
-    hi: {
-      welcome: "नमस्ते! मैं ओरो-होल्ड का एआई असिस्टेंट हूँ। आज मैं आपकी क्या सहायता कर सकता हूँ?",
-      default: "ओरो-होल्ड लैब सपोर्ट से संपर्क करने के लिए धन्यवाद। कस्टम ऑर्डर के लिए, कृपया पोर्टल के माध्यम से स्कैन अपलोड करें।"
-    },
-    ta: {
-      welcome: "வணக்கம்! நான் ஓரோ-ஹோல்ட் ஏஐ உதவியாளர். இன்று நான் உங்களுக்கு எவ்வாறு உதவ முடியும்?",
-      default: "தொடர்பு கொண்டதற்கு நன்றி. ஆர்டர்களுக்கு, போர்டல் மூலம் ஸ்கேன் பதிவேற்றவும்."
-    },
-    kn: {
-      welcome: "ನಮಸ್ಕಾರ! ನಾನು ಓರೋ-ಹೋಲ್ಡ್ ಎಐ ಸಹಾಯಕ. ಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
-      default: "ಸಂಪರ್ಕಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. ಕಸ್ಟಮ್ ಆರ್ಡರ್‌ಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ಪೋರ್ಟಲ್ ಮೂಲಕ ಸ್ಕ್ಯಾನ್ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
-    },
-    te: {
-      welcome: "నమస్తే! నేను ఓరో-హోల్డ్ AI అసిస్టెంట్‌ని. ఈ రోజు నేను మీకు ఎలా సహాయపడగలను?",
-      default: "సంప్రదించినందుకు ధన్యవాదాలు. ఆర్డర్ల కోసం, దయవిట్టు పోర్టల్ ద్వారా స్కాన్‌లను అప్‌లోడ్ చేయండి."
+      default: "Thank you for contacting Oro Hold Lab Support. For custom orders, please connect directly to a technician on WhatsApp (+91 9108527755)."
     }
   };
 
-  // Comprehensive FAQ Database
   const faqDatabase = [
     // Greetings & Small Talk
     { keys: ['hi', 'hii', 'hiii', 'hello', 'helo', 'hey', 'heyy', 'yo', 'hola', 'greetings', 'hey there'], answer: "Hello! 👋 Welcome to Dr B's Oro-Hold Dental Lab. I'm your AI assistant. How can I help you today?" },
@@ -569,9 +552,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Core Business
     { keys: ['digital workflow'], answer: "Our digital workflow supports intraoral scans, CAD/CAM design, and secure file uploads for faster case processing." },
-    { keys: ['what is oro-hold', 'what is dr b', 'about you', 'who are you'], answer: "Dr B's Oro-Hold Dental Lab is a professional dental laboratory that manufactures high-quality dental restorations and prosthetics for dentists and dental clinics. We focus on precision, quality, aesthetics, and timely delivery." },
-    { keys: ['treat patients directly', 'patient treatment', 'can i visit as a patient', 'treat patients'], answer: "No. We work exclusively with licensed dentists and dental clinics. Patients should visit their dentist for treatment." },
-    { keys: ['where is', 'location', 'located', 'where are you'], answer: "We are based in Bengaluru, Karnataka, serving dental clinics across India." },
+    { keys: ['what is oro-hold', 'what is dr b', 'about you', 'who are you'], answer: "Dr B's Oro-Hold Dental Lab is a professional dental laboratory that manufactures high-quality dental restorations and prosthetics for dentists and dental dental labs. We focus on precision, quality, aesthetics, and timely delivery." },
+    { keys: ['treat patients directly', 'patient treatment', 'can i visit as a patient', 'treat patients'], answer: "No. We work exclusively with licensed dentists and dental dental labs. Patients should visit their dentist for treatment." },
+    { keys: ['where is', 'location', 'located', 'where are you'], answer: "We are based in Bengaluru, Karnataka, serving dental dental labs across India." },
     { keys: ['working hours', 'opening hours', 'when are you open', 'business hours'], answer: "Monday to Saturday: 9:00 AM – 7:00 PM. Sunday: Closed" },
     { keys: ['how can i contact', 'contact number', 'phone number', 'email id', 'contact support'], answer: "You can contact us by phone (+91 9108527755), WhatsApp, email (oroholddentallab@gmail.com), or through the Contact page on our website." },
     { keys: ['customer support', 'technical support', 'help desk'], answer: "Yes. Our technical team is available during business hours to assist dentists." },
@@ -601,30 +584,16 @@ document.addEventListener('DOMContentLoaded', () => {
     { keys: ['collect my case', 'collect directly', 'pick up directly'], answer: "Yes, you can collect your case directly from our lab." },
     { keys: ['payment methods', 'how to pay', 'payment options', 'upi', 'credit card'], answer: "We accept UPI, Bank Transfer, Credit Card, Debit Card, and other online payment methods." },
     { keys: ['provide invoices', 'get invoice', 'gst details'], answer: "Yes, we provide official invoices with GST details." },
-    { keys: ['monthly billing', 'billing cycle', 'monthly payment'], answer: "Yes, monthly billing is available for eligible partner clinics." },
+    { keys: ['monthly billing', 'billing cycle', 'monthly payment'], answer: "Yes, monthly billing is available for eligible partner dental labs." },
     { keys: ['warranty', 'guarantee', 'warranty details'], answer: "Warranty depends on the product and usage conditions. Please refer to our product catalogue for details." },
     { keys: ['adjustment is required', 'adjustments', 'does not fit', 'crown does not fit'], answer: "We provide support for adjustments whenever applicable. Please contact our support team; we will evaluate the case and provide a suitable solution." },
     { keys: ['recommend the right restoration', 'ai recommend', 'what crown should i choose', 'compare zirconia'], answer: "Our AI assistant can guide dentists based on the provided information, but the final clinical decision remains with the treating dentist." },
-    { keys: ['partner with', 'become a partner clinic', 'new dentists'], answer: "Yes. We welcome partnerships with dental clinics across India, including new dentists." },
+    { keys: ['partner with', 'become a partner dental lab', 'new dentists'], answer: "Yes. We welcome partnerships with dental dental labs across India, including new dentists." },
     { keys: ['lab support', 'technician support', 'discuss complex', 'technical guidance', 'speak to a lab expert'], answer: "Yes. Our technicians assist with case planning, technical guidance, and complex implant or restorative cases." },
     { keys: ['shade consultation', 'request shade guide', 'custom shade'], answer: "Yes, we provide shade consultation for selected cases." },
     { keys: ['custom restoration', 'custom order'], answer: "Yes, you can request custom restorations tailored to specific patient needs." },
     { keys: ['prices', 'price list', 'pricing', 'shipping charges'], answer: "Please contact our support team or download the price list from the dentist portal for detailed pricing and shipping charges." }
   ];
-
-  // Switch Chat Language Welcome Message
-  if (chatLang) {
-    chatLang.addEventListener('change', (e) => {
-      const lang = e.target.value;
-      const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      chatMessages.innerHTML = `
-        <div class="chat-message bot">
-          ${botDatabase[lang].welcome}
-          <div class="chat-meta">${timeStr}</div>
-        </div>
-      `;
-    });
-  }
 
   // Text message send triggers
   if (chatSendBtn && chatInput) {
@@ -666,7 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
     
     // Bot analysis logic
-    const lang = chatLang.value;
+    const lang = 'en';
     const lowerMsg = msg.toLowerCase();
     
     let responseText = botDatabase[lang] ? botDatabase[lang].default : botDatabase['en'].default;
@@ -1221,6 +1190,94 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Card animations removed to guarantee instant visibility on load
+    }
+  }
+});
+
+// 7. Inline Navbar Search Logic
+document.addEventListener('DOMContentLoaded', () => {
+  const inlineSearchBtn = document.getElementById('inlineSearchBtn');
+  const navLinksList = document.getElementById('navLinksList');
+  const inlineSearchContainer = document.getElementById('inlineSearchContainer');
+  const closeInlineSearchBtn = document.getElementById('closeInlineSearchBtn');
+  const inlineSearchInput = document.getElementById('inlineSearchInput');
+  const inlineSearchResults = document.getElementById('inlineSearchResults');
+
+  const searchDatabase = [
+    { title: "Zirconia Crowns", url: "services.html", desc: "High-strength premium zirconia crowns." },
+    { title: "Dental Implants", url: "implants.html", desc: "Permanent replacement for missing teeth." },
+    { title: "Orthodontics & Aligners", url: "orthodontics.html", desc: "Clear aligners and traditional braces." },
+    { title: "Dentures & Removables", url: "removables.html", desc: "Complete and partial dentures." },
+    { title: "Cosmetic Dentistry", url: "cosmetics.html", desc: "Veneers and smile design." },
+    { title: "Pediatric Dentistry", url: "pediatrics.html", desc: "Specialized care for children." },
+    { title: "Emergency Dental Care", url: "emergency.html", desc: "Immediate assistance for dental emergencies." },
+    { title: "Pricing & Packages", url: "pricing.html", desc: "Detailed cost information for treatments." },
+    { title: "Contact Lab Support", url: "contact.html", desc: "Get in touch with our technical team." },
+    { title: "Book Appointment", url: "appointment.html", desc: "Schedule a consultation." },
+    { title: "Dentist Portal Login", url: "admin.html", desc: "Access the B2B dashboard." }
+  ];
+
+  if (inlineSearchBtn && inlineSearchContainer) {
+    inlineSearchBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      navLinksList.style.opacity = '0';
+      navLinksList.style.pointerEvents = 'none';
+      setTimeout(() => {
+        inlineSearchContainer.style.display = 'flex';
+        inlineSearchInput.focus();
+        renderInlineSearchResults("");
+      }, 300);
+    });
+
+    closeInlineSearchBtn.addEventListener('click', () => {
+      inlineSearchContainer.style.display = 'none';
+      inlineSearchResults.style.display = 'none';
+      navLinksList.style.opacity = '1';
+      navLinksList.style.pointerEvents = 'auto';
+      inlineSearchInput.value = '';
+    });
+
+    inlineSearchInput.addEventListener('input', (e) => {
+      renderInlineSearchResults(e.target.value);
+    });
+
+    function renderInlineSearchResults(query) {
+      inlineSearchResults.innerHTML = '';
+      const lowerQuery = query.toLowerCase().trim();
+      
+      let results = searchDatabase;
+      if (lowerQuery) {
+        results = searchDatabase.filter(item => 
+          item.title.toLowerCase().includes(lowerQuery) || 
+          item.desc.toLowerCase().includes(lowerQuery)
+        );
+      }
+
+      if (results.length === 0) {
+        inlineSearchResults.style.display = 'flex';
+        inlineSearchResults.innerHTML = '<div style="padding: 15px; color: rgba(255,255,255,0.5); text-align: center; font-size: 14px;">No results found.</div>';
+      } else {
+        inlineSearchResults.style.display = 'flex';
+        results.forEach(res => {
+          const a = document.createElement('a');
+          a.href = res.url;
+          a.className = 'search-result-item';
+          a.innerHTML = `
+            <span class="search-result-title">${res.title}</span>
+            <span class="search-result-desc">${res.desc}</span>
+          `;
+          inlineSearchResults.appendChild(a);
+        });
+
+        if (lowerQuery.length > 2) {
+          const aiRec = results[0];
+          const aiHint = document.createElement('div');
+          aiHint.className = 'global-search-ai-hint';
+          aiHint.style.display = 'flex';
+          aiHint.innerHTML = `<span class="ai-sparkle">✨</span> AI Suggestion: Are you looking for <a href="${aiRec.url}" style="color:var(--gold);">${aiRec.title}</a>?`;
+          inlineSearchResults.appendChild(aiHint);
+        }
+      }
     }
   }
 });
