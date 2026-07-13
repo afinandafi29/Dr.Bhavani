@@ -529,7 +529,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { keys: ['good afternoon', 'afternoon'], answer: "Good afternoon! Welcome to Oro-Hold Dental Lab. How can I help?" },
     { keys: ['good evening', 'evening'], answer: "Good evening! 😊 What can I do for you today?" },
     { keys: ['good night', 'night'], answer: "Good night! If you have any questions before you leave, I'm here to help." },
-    { keys: ['how are you', 'how are you doing', 'how is it going', 'hows it going', 'are you okay'], answer: "I'm doing great, thanks for asking! I'm ready to help you with dental laboratory services, orders, digital scans, pricing, or anything related to Oro-Hold." },
     { keys: ['how is your day', 'hows your day'], answer: "Every day is a great day when I get to help our customers! 😊" },
     { keys: ['what is up', 'whats up'], answer: "I'm here and ready to help. What would you like to know?" },
     { keys: ['nice to meet you'], answer: "Nice to meet you too! 😊 Welcome to Oro-Hold Dental Lab." },
@@ -542,61 +541,34 @@ document.addEventListener('DOMContentLoaded', () => {
     { keys: ['tell me a joke', 'make me laugh'], answer: "Why did the tooth go to school? 🦷 Because it wanted to become a little brighter!" },
     { keys: ['make me smile'], answer: "A healthy smile starts with great dental care—and we're here to help make that happen! 😊" },
     { keys: ['are you smart'], answer: "I like to think so! I can answer questions, guide you through our services, and help you find what you need." },
-    { keys: ['can you cook'], answer: "😄 Cooking isn't my specialty! I'm here to help with Oro-Hold Dental Lab services, orders, digital workflows, and support." },
     
     // Identity & Help
-    { keys: ['what can you do'], answer: "I can help you: Explain our services, Recommend restorations, Upload digital scans, Track orders, Answer FAQs, Provide pricing information, Connect you with our team, Book a consultation." },
     { keys: ['are you a chatbot', 'are you a real person', 'are you human', 'real person'], answer: "I'm an AI-powered assistant designed to help you quickly find information. If you need a human team member, I can help you get in touch." },
-    { keys: ['talk to a person', 'talk to someone', 'contact support', 'customer care'], answer: "Of course. I can help connect you with our support team by phone (+91 9108527755), WhatsApp, or email." },
-    { keys: ['help', 'support', 'assist me', 'i need help', 'can you help me', 'guide me'], answer: "I'm here to help! You can ask about: Our services, Uploading scans, Tracking orders, Pricing, Delivery, Payments, Support." },
     
-        { keys: ['do you offer invisible aligners', 'invisible aligners', 'clear aligners'], answer: "Yes! We manufacture premium clear aligners and orthodontic appliances. Please upload your scan to place an order." },
-    { keys: ['how much do dental implants cost', 'implant pricing', 'cost of implants'], answer: "Our custom implant abutments and implant-supported crowns are competitively priced. Please contact our support team on WhatsApp for the detailed pricing list." },
-    { keys: ['i want to book an appointment', 'book appointment'], answer: "To book an appointment or schedule a pickup/courier, please click the 'Book a Call' button in the navigation bar." },
     { keys: ['do you offer teeth whitening', 'teeth whitening'], answer: "Yes, we provide professional teeth whitening trays and custom bleaching solutions for dental clinics." },
 // Core Business
-    { keys: ['digital workflow'], answer: "Our digital workflow supports intraoral scans, CAD/CAM design, and secure file uploads for faster case processing." },
-    { keys: ['what is oro-hold', 'what is dr b', 'about you', 'who are you'], answer: "Dr B's Oro-Hold Dental Lab is a professional dental laboratory that manufactures high-quality dental restorations and prosthetics for dentists and dental dental labs. We focus on precision, quality, aesthetics, and timely delivery." },
     { keys: ['treat patients directly', 'patient treatment', 'can i visit as a patient', 'treat patients'], answer: "No. We work exclusively with licensed dentists and dental dental labs. Patients should visit their dentist for treatment." },
     { keys: ['where is', 'location', 'located', 'where are you'], answer: "We are based in Bengaluru, Karnataka, serving dental dental labs across India." },
     { keys: ['working hours', 'opening hours', 'when are you open', 'business hours'], answer: "Monday to Saturday: 10:00 AM – 8:00 PM. Sunday: Closed" },
-    { keys: ['how can i contact', 'contact number', 'phone number', 'email id', 'contact support'], answer: "You can contact us by phone (+91 9108527755), WhatsApp, email (oroholddentallab@gmail.com), or through the Contact page on our website." },
-    { keys: ['customer support', 'technical support', 'help desk'], answer: "Yes. Our technical team is available during business hours to assist dentists." },
     { keys: ['services do you provide', 'what do you make', 'products', 'what do you manufacture'], answer: "We manufacture: Zirconia Crowns, PFM Crowns, E-Max Crowns, Metal Crowns, Veneers, Inlays & Onlays, Dentures, Cast Partial Dentures, Implant Restorations, Surgical Guides, Orthodontic Appliances, Night Guards, Retainers, Splints, Temporary Crowns, and Smile Design." },
-    { keys: ['implant crowns', 'implant supported', 'implants'], answer: "Yes. We fabricate implant-supported crowns and prosthetics compatible with multiple implant systems." },
     { keys: ['dentures', 'flexible dentures', 'complete dentures'], answer: "Yes. We provide complete, partial, flexible, and premium dentures." },
     { keys: ['cad/cam', 'cad cam', 'cadcam'], answer: "Yes. We use advanced CAD/CAM technology for precise and accurate restorations." },
-    { keys: ['place an order', 'how to order', 'submit case'], answer: "Dentists can submit cases by: Online Order Form, WhatsApp, Courier, Lab Pickup, or Digital Scan Upload." },
-    { keys: ['intraoral scan', 'digital scan', 'upload scan', 'intra oral'], answer: "Yes. We accept digital scans from major intraoral scanners." },
     { keys: ['file formats', 'which format', 'obj', 'ply', 'stl'], answer: "We accept: STL, PLY, OBJ, DCM, and ZIP Files." },
-    { keys: ['physical impressions', 'send impressions', 'silicone impression', 'alginate'], answer: "Yes. Physical impressions are accepted through courier or pickup service." },
     { keys: ['pickup service', 'collection service', 'book a pickup', 'request pickup'], answer: "Yes, we provide pickup service in selected service areas." },
-    { keys: ['track my order', 'tracking status', 'order status'], answer: "Yes. Every case receives a tracking status." },
     { keys: ['modify my order', 'change order', 'edit case'], answer: "Yes, you can modify your order if production has not yet started." },
     { keys: ['cancel my order', 'stop order'], answer: "Orders can be cancelled before manufacturing begins." },
-    { keys: ['fabrication take', 'turnaround time', 'how long', 'delivery time'], answer: "Depending on the restoration: Temporary Crown: 1–2 days, Zirconia Crown: 3–5 days, PFM Crown: 3–5 days, Dentures: 5–7 days, Implant Cases: 5–10 days." },
-    { keys: ['express service', 'rush case', 'urgent order', 'express delivery'], answer: "Yes. Rush cases are available depending on workload." },
     { keys: ['materials do you use', 'which material', 'premium material'], answer: "We use premium certified dental-grade materials from trusted manufacturers." },
     { keys: ['materials safe', 'safe to use', 'biocompatible'], answer: "Yes. All materials are dental-grade, safe, and quality tested." },
     { keys: ['quality checks', 'inspection', 'quality control'], answer: "Yes. Every restoration undergoes multiple quality inspections." },
     { keys: ['handcrafted', 'hand finished', 'manual finish'], answer: "Many restorations combine CAD/CAM precision with expert hand finishing." },
     { keys: ['digital dentistry', 'digital workflow'], answer: "Yes. We specialize in fully digital workflows." },
-    { keys: ['which scanners', 'supported scanners', 'itero', '3shape', 'medit', 'trios', 'primescan', 'carestream'], answer: "We support 3Shape, Medit, iTero, TRIOS, PrimeScan, Carestream, and all open systems." },
     { keys: ['email scan', 'email files'], answer: "Yes, you can email scan files to us." },
-    { keys: ['deliver across india', 'pan india', 'all over india', 'shipping available'], answer: "Yes, we deliver across India using reliable national courier partners." },
-    { keys: ['courier services', 'which courier', 'shipping method'], answer: "Reliable national courier partners are used depending on your location." },
     { keys: ['collect my case', 'collect directly', 'pick up directly'], answer: "Yes, you can collect your case directly from our lab." },
-    { keys: ['payment methods', 'how to pay', 'payment options', 'upi', 'credit card'], answer: "We accept UPI, Bank Transfer, Credit Card, Debit Card, and other online payment methods." },
     { keys: ['provide invoices', 'get invoice', 'gst details'], answer: "Yes, we provide official invoices with GST details." },
-    { keys: ['monthly billing', 'billing cycle', 'monthly payment'], answer: "Yes, monthly billing is available for eligible partner dental labs." },
     { keys: ['warranty', 'guarantee', 'warranty details'], answer: "Warranty depends on the product and usage conditions. Please refer to our product catalogue for details." },
-    { keys: ['adjustment is required', 'adjustments', 'does not fit', 'crown does not fit'], answer: "We provide support for adjustments whenever applicable. Please contact our support team; we will evaluate the case and provide a suitable solution." },
     { keys: ['recommend the right restoration', 'ai recommend', 'what crown should i choose', 'compare zirconia'], answer: "Our AI assistant can guide dentists based on the provided information, but the final clinical decision remains with the treating dentist." },
-    { keys: ['partner with', 'become a partner dental lab', 'new dentists'], answer: "Yes. We welcome partnerships with dental dental labs across India, including new dentists." },
-    { keys: ['lab support', 'technician support', 'discuss complex', 'technical guidance', 'speak to a lab expert'], answer: "Yes. Our technicians assist with case planning, technical guidance, and complex implant or restorative cases." },
     { keys: ['shade consultation', 'request shade guide', 'custom shade'], answer: "Yes, we provide shade consultation for selected cases." },
     { keys: ['custom restoration', 'custom order'], answer: "Yes, you can request custom restorations tailored to specific patient needs." },
-    { keys: ['prices', 'price list', 'pricing', 'shipping charges'], answer: "Please contact our support team or download the price list from the dentist portal for detailed pricing and shipping charges." }
   ];
 
   // Text message send triggers
@@ -656,10 +628,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Fallbacks if not found (for some regional keywords retained from old logic)
     if (!found) {
-      if (lowerMsg.includes('turnaround') || lowerMsg.includes('delivery') || lowerMsg.includes('दिनों') || lowerMsg.includes('நாட்கள்') || lowerMsg.includes('ದಿನಗಳು') || lowerMsg.includes('రోజులు')) {
-        responseText = "Standard zirconia restorations take 3-5 days. Dentures take 5-7 days. Express shipping is available.";
       } else if (lowerMsg.includes('stl') || lowerMsg.includes('scan') || lowerMsg.includes('format') || lowerMsg.includes('स्कैन') || lowerMsg.includes('ஸ்கேன்') || lowerMsg.includes('ಸ್ಕ್ಯಾನ್') || lowerMsg.includes('స్కాన్')) {
-        responseText = "We accept all open scanner STL files, PLY, and OBJ digital impressions. Upload directly inside your Dentist Portal dashboard.";
       } else if (lowerMsg.includes('zirconia') || lowerMsg.includes('material') || lowerMsg.includes('grade') || lowerMsg.includes('crown') || lowerMsg.includes('ज़िरकोनिया') || lowerMsg.includes('சிர்கோனியா') || lowerMsg.includes('ಜಿರ್ಕೋನಿಯಾ') || lowerMsg.includes('జిర్కోనియా')) {
         responseText = "We offer premium zirconia brands including 3D Pro Multilayer and high-strength solid monolithic zirconia.";
       } else if (lowerMsg.includes('ship') || lowerMsg.includes('pickup') || lowerMsg.includes('courier') || lowerMsg.includes('कूरियर') || lowerMsg.includes('கூரியர்') || lowerMsg.includes('ಕೊರಿಯర్') || lowerMsg.includes('కొరియర్')) {

@@ -221,7 +221,7 @@
     }
     .status-milling { background-color: rgba(255, 149, 0, 0.12); color: #ff9500; border: 1px solid rgba(255, 149, 0, 0.2); }
     .status-glazing { background-color: rgba(90, 200, 250, 0.12); color: #5ac8fa; border: 1px solid rgba(90, 200, 250, 0.2); }
-    .status-shipped { background-color: rgba(52, 199, 89, 0.12); color: #34c759; border: 1px solid rgba(52, 199, 89, 0.2); }
+    .status-completed { background-color: rgba(52, 199, 89, 0.12); color: #34c759; border: 1px solid rgba(52, 199, 89, 0.2); }
     .status-cad { background-color: rgba(175, 82, 222, 0.12); color: #af52de; border: 1px solid rgba(175, 82, 222, 0.2); }
     
     /* Machine List */
@@ -519,7 +519,7 @@
         let statusClass = "status-cad";
         if(order.status === "Milling") statusClass = "status-milling";
         else if(order.status === "Glazing") statusClass = "status-glazing";
-        else if(order.status === "Shipped") statusClass = "status-shipped";
+        else if(order.status === "Completed") statusClass = "status-completed";
 
         let actionBtn = "";
         if (order.status === "CAD Design") {
@@ -527,7 +527,7 @@
         } else if(order.status === "Milling") {
           actionBtn = `<span style="font-size:12px; color:rgba(255,255,255,0.4);">Milling in progress...</span>`;
         } else if(order.status === "Glazing") {
-          actionBtn = `<button class="sim-btn" onclick="shipOrder('${order.id}')">Ship Restorations</button>`;
+          actionBtn = `<button class="sim-btn" onclick="completeOrder('${order.id}')">Mark as Completed</button>`;
         } else {
           actionBtn = `<span style="font-size:12px; color:var(--gold-light);">Delivered</span>`;
         }
@@ -545,7 +545,7 @@
       });
 
       // Update active orders count KPI
-      document.getElementById("kpiActiveOrders").textContent = labOrders.filter(o => o.status !== "Shipped").length;
+      document.getElementById("kpiActiveOrders").textContent = labOrders.filter(o => o.status !== "Completed").length;
     }
 
     // Render Function: Machines List
@@ -627,10 +627,10 @@
     }
 
     // Simulation Engine: Shipping
-    function shipOrder(orderId) {
+    function completeOrder(orderId) {
       const order = labOrders.find(o => o.id === orderId);
       if (order) {
-        order.status = "Shipped";
+        order.status = "Completed";
         renderOrdersTable();
       }
     }
