@@ -540,6 +540,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Comprehensive FAQ Database
   const faqDatabase = [
+    // Greetings & Small Talk
+    { keys: ['hi', 'hii', 'hiii', 'hello', 'helo', 'hey', 'heyy', 'yo', 'hola', 'greetings', 'hey there'], answer: "Hello! 👋 Welcome to Dr B's Oro-Hold Dental Lab. I'm your AI assistant. How can I help you today?" },
+    { keys: ['good morning', 'morning'], answer: "Good morning! ☀️ Hope you're having a great day. How may I assist you?" },
+    { keys: ['good afternoon', 'afternoon'], answer: "Good afternoon! Welcome to Oro-Hold Dental Lab. How can I help?" },
+    { keys: ['good evening', 'evening'], answer: "Good evening! 😊 What can I do for you today?" },
+    { keys: ['good night', 'night'], answer: "Good night! If you have any questions before you leave, I'm here to help." },
+    { keys: ['how are you', 'how are you doing', 'how is it going', 'hows it going', 'are you okay'], answer: "I'm doing great, thanks for asking! I'm ready to help you with dental laboratory services, orders, digital scans, pricing, or anything related to Oro-Hold." },
+    { keys: ['how is your day', 'hows your day'], answer: "Every day is a great day when I get to help our customers! 😊" },
+    { keys: ['what is up', 'whats up'], answer: "I'm here and ready to help. What would you like to know?" },
+    { keys: ['nice to meet you'], answer: "Nice to meet you too! 😊 Welcome to Oro-Hold Dental Lab." },
+    
+    // Polite & Fun Messages
+    { keys: ['thank you', 'thanks', 'thx', 'tysm', 'appreciate it', 'many thanks', 'thank you so much'], answer: "You're very welcome! Happy to help. 😊" },
+    { keys: ['bye', 'goodbye', 'see you', 'cya', 'take care', 'have a nice day'], answer: "Goodbye! We look forward to assisting you again. Have a wonderful day!" },
+    { keys: ['awesome', 'cool', 'perfect', 'nice', 'amazing', 'great', 'excellent', 'wonderful', 'okay', 'yes', 'sounds good'], answer: "Fantastic! Let me know if there's anything else I can assist you with. 😊" },
+    { keys: ['no'], answer: "No problem! If you change your mind or need assistance later, I'm always here to help." },
+    { keys: ['tell me a joke', 'make me laugh'], answer: "Why did the tooth go to school? 🦷 Because it wanted to become a little brighter!" },
+    { keys: ['make me smile'], answer: "A healthy smile starts with great dental care—and we're here to help make that happen! 😊" },
+    { keys: ['are you smart'], answer: "I like to think so! I can answer questions, guide you through our services, and help you find what you need." },
+    { keys: ['can you cook'], answer: "😄 Cooking isn't my specialty! I'm here to help with Oro-Hold Dental Lab services, orders, digital workflows, and support." },
+    
+    // Identity & Help
+    { keys: ['what can you do'], answer: "I can help you: Explain our services, Recommend restorations, Upload digital scans, Track orders, Answer FAQs, Provide pricing information, Connect you with our team, Book a consultation." },
+    { keys: ['are you a chatbot', 'are you a real person', 'are you human', 'real person'], answer: "I'm an AI-powered assistant designed to help you quickly find information. If you need a human team member, I can help you get in touch." },
+    { keys: ['talk to a person', 'talk to someone', 'contact support', 'customer care'], answer: "Of course. I can help connect you with our support team by phone (+91 9108527755), WhatsApp, or email." },
+    { keys: ['help', 'support', 'assist me', 'i need help', 'can you help me', 'guide me'], answer: "I'm here to help! You can ask about: Our services, Uploading scans, Tracking orders, Pricing, Delivery, Payments, Support." },
+    
+    // Core Business
+    { keys: ['digital workflow'], answer: "Our digital workflow supports intraoral scans, CAD/CAM design, and secure file uploads for faster case processing." },
     { keys: ['what is oro-hold', 'what is dr b', 'about you', 'who are you'], answer: "Dr B's Oro-Hold Dental Lab is a professional dental laboratory that manufactures high-quality dental restorations and prosthetics for dentists and dental clinics. We focus on precision, quality, aesthetics, and timely delivery." },
     { keys: ['treat patients directly', 'patient treatment', 'can i visit as a patient', 'treat patients'], answer: "No. We work exclusively with licensed dentists and dental clinics. Patients should visit their dentist for treatment." },
     { keys: ['where is', 'location', 'located', 'where are you'], answer: "We are based in Bengaluru, Karnataka, serving dental clinics across India." },
