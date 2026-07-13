@@ -31,54 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dynamic Hero Slide Text Data (10 Slides mapping to the relevant restorations)
   const heroTextData = [
     {
-      subtitle: "Precision Examination",
-      title: "Every Detail Matters, Every Tooth Counts",
-      desc: "Our experts use advanced dental mirrors and precision probes to deliver comprehensive examinations with unmatched clinical accuracy."
+      subtitle: "Welcome to Oro-Hold",
+      title: "Healthy Smiles for Your Entire Family",
+      desc: "Providing warm, gentle, and comprehensive dental care to ensure lifelong healthy smiles for your loved ones."
     },
     {
-      subtitle: "Pediatric Dentistry",
-      title: "Friendly Care for Your Little Ones",
-      desc: "Creating happy, fear-free dental experiences for children with our specialized pediatric team and kid-friendly clinical environment."
+      subtitle: "Clinical Excellence",
+      title: "Expert Care by Professional Dentists",
+      desc: "Our experienced clinical team utilizes state-of-the-art procedures to deliver comfortable, pain-free treatments."
     },
     {
-      subtitle: "Digital Technology",
-      title: "High-Tech 3D Digital Scanning",
-      desc: "Using state-of-the-art CBCT and intraoral scanners to create precise digital models for diagnosis and treatment planning."
-    },
-    {
-      subtitle: "Master Craftsmanship",
-      title: "Dental Lab Precision Crown Crafting",
-      desc: "Our lab technicians hand-layer every ceramic crown under magnification, ensuring perfect color match and anatomical accuracy."
-    },
-    {
-      subtitle: "Surgical Excellence",
-      title: "Expert Implant Surgical Team",
-      desc: "A fully certified surgical team performing implant placements in a sterile, medically equipped operating environment."
-    },
-    {
-      subtitle: "Orthodontic Innovation",
-      title: "Clear Aligner Consultation",
-      desc: "Offering Oro-Align invisible clear aligner solutions with digital smile simulations and personalized treatment staging."
-    },
-    {
-      subtitle: "Premium Facility",
-      title: "Welcoming Modern Waiting Area",
-      desc: "Our premium reception space is designed to put you at ease — calm, clean, contemporary, and fully air-conditioned."
-    },
-    {
-      subtitle: "Medical-Grade Hygiene",
-      title: "Sterile Instrument Processing",
-      desc: "Maintaining the highest sterilization standards with autoclave-processed instruments and single-use consumables for every patient."
-    },
-    {
-      subtitle: "Teamwork & Care",
-      title: "Dedicated Chairside Nurse Support",
-      desc: "Our trained dental nurses assist with precision and compassion, ensuring seamless clinical flow and patient comfort throughout."
-    },
-    {
-      subtitle: "Aesthetic Outcomes",
-      title: "Confident Smiles After Every Visit",
-      desc: "Leaving our patients not just treated, but truly transformed — with brighter, healthier, and more confident smiles."
+      subtitle: "Modern Facilities",
+      title: "Step Into Our Premium Dental Clinic",
+      desc: "Relax in our comfortable waiting lounge, equipped with next-generation sterilization technology and advanced dental chairs."
     }
   ];
 
