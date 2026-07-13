@@ -483,8 +483,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. AI Chatbot Speech Synthesis & Recognition
-  const voiceBtn = document.getElementById('voiceBtn');
+  // 5. AI Chatbot Logic
   const chatInput = document.getElementById('chatInput');
   const chatSendBtn = document.getElementById('chatSendBtn');
   const chatMessages = document.getElementById('chatMessages');
@@ -497,14 +496,14 @@ document.addEventListener('DOMContentLoaded', () => {
       chip.addEventListener('click', () => {
         const question = chip.getAttribute('data-question');
         if (question === "Connect with Lab Technician") {
-          window.open('https://wa.me/917550134175', '_blank');
+          window.open('https://wa.me/919108527755', '_blank');
           
           processUserChatMessage("Requesting live tech connect...");
           setTimeout(() => {
             const botMsgDiv = document.createElement('div');
             botMsgDiv.className = 'chat-message bot';
             const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            botMsgDiv.innerHTML = `Redirecting you to our technical manager (+91 7550134175) on WhatsApp...<div class="chat-meta">${timeStr}</div>`;
+            botMsgDiv.innerHTML = `Redirecting you to our technical manager (+91 9108527755) on WhatsApp...<div class="chat-meta">${timeStr}</div>`;
             chatMessages.appendChild(botMsgDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
           }, 600);
@@ -518,71 +517,71 @@ document.addEventListener('DOMContentLoaded', () => {
   // Multi-Language Response Bot Repository for Dental Lab
   const botDatabase = {
     en: {
-      welcome: "Hello! I am your Oro-Hold Dental Lab AI Assistant. How can I help you today?",
-      turnaround: "Standard zirconia restorations take 3 working days. Custom implant abutments or full-arch bars require 5 working days. Express shipping is available.",
-      stl: "We accept all open scanner STL files, PLY, and OBJ digital impressions. Upload directly inside your Dentist Portal dashboard.",
-      zirconia: "We offer premium zirconia brands including: 3D Pro Multilayer (1050 MPa strength, 57% translucency) and high-strength solid monolithic zirconia.",
-      ship: "We arrange free local courier pickup for physical alginate or silicone impressions in Bengaluru. Use the 'Request Pickup' form on the Dentist Dashboard.",
-      pain: "For any post-delivery discomfort, high bites, or pain, please contact your prescribing dentist immediately. We can adjust crowns or aligners if they request a scan modification.",
-      timing: "Dr B's Oro-Hold Dental Lab operates Monday through Saturday, 9:00 AM to 7:00 PM. We are closed on Sundays and holidays.",
-      location: "Our primary facility is located at: 1st Floor, SR Complex, Siddhaiah Puranik Rd, Basaveshwar Nagar, Bengaluru, Karnataka 560079.",
-      insurance: "As a B2B dental laboratory, we bill dental clinics directly. Please check with your dentist regarding their clinic's patient insurance or EMI plans.",
-      cost: "Pricing depends on the restoration material (e.g. monolithic zirconia, layer ceramic, cobalt-chromium, titanium). Dentists can request our full lab price list by contacting support.",
-      default: "Thank you for contacting Dr B's Oro-Hold Lab Support. For custom orders, please upload scans via the Dentist Portal or connect directly to a technician on WhatsApp (+91 7550134175)."
+      welcome: "Hello! I am your Oro Hold AI Assistant. How can I help you today?",
+      default: "Thank you for contacting Oro Hold Lab Support. For custom orders, please upload scans via the Dentist Portal or connect directly to a technician on WhatsApp (+91 9108527755)."
     },
     hi: {
-      welcome: "नमस्ते! मैं डॉ. बी के ओरो-होल्ड डेंटल लैब का एआई असिस्टेंट हूँ। आज मैं आपकी क्या सहायता कर सकता हूँ?",
-      turnaround: "मानक ज़िरकोनिया बहाली में 3 कार्य दिवस लगते हैं। कस्टम इम्प्लांट एबूटमेंट या फुल-आर्क बार में 5 कार्य दिवस लगते हैं। एक्सप्रेस शिपिंग उपलब्ध है।",
-      stl: "हम सभी ओपन स्कैनर एसटीएल (STL), पीएलवाई (PLY), और ओबीजे (OBJ) डिजिटल इंप्रेशन स्वीकार करते हैं। सीधे अपने डेंटिस्ट पोर्टल डैशबोर्ड के अंदर अपलोड करें।",
-      zirconia: "हम 3D प्रो मल्टीलेयर (1050 MPa ताकत, 57% पारदर्शिता) और उच्च शक्ति वाले ठोस मोनोलिथिक ज़िरकोनिया सहित प्रीमियम ज़िरкоनिया ब्रांड पेश करते हैं।",
-      ship: "हम बेंगलुरु में भौतिक एल्गिनेट या सिलिकॉन इंप्रेशन के लिए मुफ्त स्थानीय कूरियर पिकअप की व्यवस्था करते हैं। डेंटिस्ट डैशबोर्ड पर 'रिक्वेस्ट पिकअप' फॉर्म का उपयोग करें।",
-      pain: "किसी भी तरह की असुविधा, दर्द या फिटिंग की समस्या होने पर कृपया तुरंत अपने डेंटिस्ट से संपर्क करें। यदि वे बदलाव का अनुरोध करते हैं, तो हम इसे ठीक कर सकते हैं।",
-      timing: "डॉ. बी का ओरो-होल्ड लैब सोमवार से शनिवार सुबह 9:00 बजे से शाम 7:00 बजे तक चालू रहता है। रविवार और राष्ट्रीय छुट्टियों पर लैब बंद रहता है।",
-      location: "हमारा मुख्य कार्यालय यहां स्थित है: पहली मंजिल, एसआर कॉम्प्लेक्स, सिद्धैया पुराणिक रोड, बसवेश्वर नगर, बेंगलुरु, कर्नाटक 560079।",
-      insurance: "एक बी2बी लैब के रूप में, हम सीधे क्लीनिकों को बिल करते हैं। कृपया ईएमआई या बीमा विकल्पों के लिए अपने डेंटिस्ट से जांच करें।",
-      cost: "कीमतें बहाली सामग्री (ज़िरकोनिया, सिरेमिक, टाइटेनियम आदि) पर निर्भर करती हैं। डेंटिस्ट सपोर्ट से संपर्क करके हमारी पूरी मूल्य सूची का अनुरोध कर सकते हैं।",
-      default: "डॉ. बी के ओरो-होल्ड लैब सपोर्ट से संपर्क करने के लिए धन्यवाद। कस्टम ऑर्डर के लिए, कृपया डेंटिस्ट पोर्टल के माध्यम से स्कैन अपलोड करें या सीधे व्हाट्सएप (+91 7550134175) पर तकनीशियन से जुड़ें।"
+      welcome: "नमस्ते! मैं ओरो-होल्ड का एआई असिस्टेंट हूँ। आज मैं आपकी क्या सहायता कर सकता हूँ?",
+      default: "ओरो-होल्ड लैब सपोर्ट से संपर्क करने के लिए धन्यवाद। कस्टम ऑर्डर के लिए, कृपया पोर्टल के माध्यम से स्कैन अपलोड करें।"
     },
     ta: {
-      welcome: "வணக்கம்! நான் டாக்டர் பி-யின் ஓரோ-ஹோல்ட் டென்டல் லேப் ஏஐ உதவியாளர். இன்று நான் உங்களுக்கு எவ்வாறு உதவ முடியும்?",
-      turnaround: "சாதாரண சிர்கோனியா மறுசீரமைப்பிற்கு 3 வேலை நாட்கள் ஆகும். தனிப்பயன் இம்ப்ளான்ட் அபுட்மென்ட்கள் அல்லது முழு-வளைவு பார்களுக்கு 5 வேலை நாட்கள் ஆகும். எக்ஸ்பிரஸ் ஷிப்பிங் கிடைக்கிறது.",
-      stl: "அனைத்து ஓபன் ஸ்கேனர் எஸ்டிஎல் (STL), பிஎல்ஒய் (PLY), மற்றும் ஓபிஜே (OBJ) டிஜிட்டல் பதிவுகளை நாங்கள் ஏற்றுக்கொள்கிறோம். உங்கள் பல் மருத்துவர் போர்டல் டாஷ்போர்டில் நேரடியாக பதிவேற்றவும்.",
-      zirconia: "நாங்கள் 3டி ப்ரோ மல்டிலேயர் (1050 MPa வலிமை, 57% ஒளிஊடுருவும் தன்மை) மற்றும் அதிக வலிமை கொண்ட திட மோனோலிதிக் சிர்கோனியா உள்ளிட்ட பிரீமியம் சிர்கோனியா பிராண்டுகளை வழங்குகிறோம்.",
-      ship: "பெங்களூரில் உள்ள அல்கினேட் அல்லது சிலிகான் பதிவுகளுக்கு இலவச உள்ளூர் கூரியர் பிக்கப்பை நாங்கள் ஏற்பாடு செய்கிறோம். பல் மருத்துவர் டாஷ்போர்டில் உள்ள 'பிக்கப் கோரிக்கை' படிவத்தைப் பயன்படுத்தவும்.",
-      pain: "ஏதேனும் அசௌகரியம் அல்லது வலி ஏற்பட்டால் உங்கள் பல் மருத்துவரை அணுகவும். அவர்கள் ஸ்கேன் மாற்றத்தைக் கோரினால் நாங்கள் கிரீடங்களை சரிசெய்யலாம்.",
-      timing: "டாக்டர் பி ஓரோ-ஹோல்ட் லேப் திங்கள் முதல் சனி வரை காலை 9:00 மணி முதல் மாலை 7:00 மணி வரை செயல்படுகிறது. ஞாயிறு மற்றும் அரசு விடுமுறை நாட்களில் மூடப்படும்.",
-      location: "எங்கள் முக்கிய முகவரி: 1வது தளம், எஸ்ஆர் காம்ப்ளக்ஸ், சித்தையா புரானிக் சாலை, பசவேஸ்வர நகர், பெங்களூரு, கர்நாடகா 560079.",
-      insurance: "நாங்கள் பல் மருத்துவ மனைகளுக்கு நேரடியாக கட்டணம் வசூలెழுப்புகிறோம். உங்கள் கிளினிக்கின் காப்பீடு அல்லது இஎம்ஐ திட்டங்களுக்கு உங்கள் பல் மருத்துவரை அணுகவும்.",
-      cost: "விலைகள் பயன்படுத்தப்படும் பொருளைப் பொறுத்தது (சிர்கோனியா, டைட்டானியம் போன்றவை). பல் மருத்துவர்கள் எங்களை தொடர்பு கொண்டு லேப் விலை பட்டியலை பெறலாம்.",
-      default: "டாக்டர் பி ஓரோ-ஹோல்ட் லேப் ஆதரவைத் தொடர்பு கொண்டதற்கு நன்றி. தனிப்பయን ஆர்டர்களுக்கு, பல் மருத்துவர் போர்டல் மூலம் ஸ்கேன் பதிவேற்றவும் அல்லது வாட்ஸ்அப் (+91 7550134175) மூலம் நேரடியாக தொழில்நுட்ப வல்லுநரைத் தொடர்பு கொள்ளவும்."
+      welcome: "வணக்கம்! நான் ஓரோ-ஹோல்ட் ஏஐ உதவியாளர். இன்று நான் உங்களுக்கு எவ்வாறு உதவ முடியும்?",
+      default: "தொடர்பு கொண்டதற்கு நன்றி. ஆர்டர்களுக்கு, போர்டல் மூலம் ஸ்கேன் பதிவேற்றவும்."
     },
     kn: {
-      welcome: "ನಮಸ್ಕಾರ! ನಾನು ಡಾ. ಬಿ ಅವರ ಓರೋ-ಹೋಲ್ಡ್ ಡೆಂಟಲ್ ಲ್ಯಾಬ್ ಎಐ ಸಹಾಯಕ. ಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
-      turnaround: "ಸಾಮಾನ್ಯ ಜಿರ್ಕೋನಿಯಾ ಪುನಃಸ್ಥಾಪನೆಗೆ 3 ಕೆಲಸದ ದಿನಗಳು ಬೇಕಾಗುತ್ತವೆ. ಕಸ್ಟಮ್ ಇಂಪ್ಲಾಂಟ್ ಅಬುಟ್‌ಮೆಂಟ್ ಅಥವಾ ಫುಲ್-ಆರ್ಚ್ ಬಾರ್‌ಗಳಿಗೆ 5 ಕೆಲಸದ ದಿನಗಳು ಬೇಕಾಗುತ್ತವೆ. ಎಕ್ಸ್‌ಪ್ರೆಸ್ ಶಿಪ್ಪಿಂಗ್ ಲಭ್ಯವಿದೆ.",
-      stl: "ನಾವು ಎಲ್ಲಾ ಮುಕ್ತ ಸ್ಕ್ಯಾನರ್ ಎಸ್‌ಟಿಎಲ್ (STL), ಪಿಎಲ್‌ವೈ (PLY), ಮತ್ತು ಒಬಿಜೆ (OBJ) ಡಿಜಿಟಲ್ ಇಂಪ್ರೆಷನ್‌ಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತೇವೆ. ನಿಮ್ಮ ಡೆಂಟಿಸ್ಟ್ ಪೋರ್ಟಲ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ನಲ್ಲಿ ನೇರವಾಗಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.",
-      zirconia: "ನಾವು 3D ಪ್ರೊ ಮಲ್ಟಿಲೇಯರ್ (1050 MPa ಸಾಮರ್ಥ್ಯ, 57% ಪಾರದರ್ಶಕತೆ) ಮತ್ತು ಹೆಚ್ಚಿನ ಸಾಮರ್ಥ್ಯದ ಘನ ಮೊನೊಲಿಥಿಕ್ ಜಿರ್ಕೋನಿಯಾ ಸೇರಿದಂತೆ ಪ್ರೀಮಿಯಂ ಜಿರ್ಕೋನಿಯಾ ಬ್ರಾಂಡ್‌ಗಳನ್ನು ನೀಡುತ್ತೇವೆ.",
-      ship: "ಬೆಂಗಳೂರಿನಲ್ಲಿ ಭೌತಿಕ ಅಲ್ಜಿನೇಟ್ ಅಥವಾ ಸಿಲಿಕೋನ್ ಇಂಪ್ರೆಷನ್‌ಗಳಿಗಾಗಿ ನಾವು ಉಚಿತ ಸ್ಥಳೀಯ ಕೊರಿಯರ್ ಪಿಕಪ್ ಅನ್ನು ವ್ಯವಸ್ಥೆ ಮಾಡುತ್ತೇವೆ. ಡೆಂಟಿಸ್ಟ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ನಲ್ಲಿ 'ಪಿಕಪ್ ವಿನಂತಿ' ಫಾರ್ಮ್ ಬಳಸಿ.",
-      pain: "ಚಿಕಿತ್ಸೆಯ ನಂತರ ಯಾವುದೇ ನೋವು ಅಥವಾ ಅಸ್ವಸ್ಥತೆ ಇದ್ದರೆ ದಯವಿಟ್ಟು ತಕ್ಷಣ ನಿಮ್ಮ ಡೆಂಟಿಸ್ಟ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿ. ಅವರು ಕೋರಿದರೆ ನಾವು ಪುನಃಸ್ಥಾಪನೆಗಳನ್ನು ಸರಿಪಡಿಸುತ್ತೇವೆ.",
-      timing: "ಡಾ. ಬಿ ಓರೋ-ಹೋಲ್ಡ್ ಲ್ಯಾಬ್ ಸೋಮವಾರದಿಂದ ಶನಿವಾರದವರೆಗೆ ಬೆಳಗ್ಗೆ 9:00 ರಿಂದ ಸಂಜೆ 7:00 ರವರೆಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ. ಭಾನುವಾರ ರಜೆ ಇರುತ್ತದೆ.",
-      location: "ನಮ್ಮ ಲ್ಯಾಬ್ ವಿಳಾಸ: 1ನೇ ಮಹಡಿ, ಎಸ್‌ಆರ್ ಕಾಂಪ್ಲೆಕ್ಸ್, ಸಿದ್ದಯ್ಯ ಪುರಾಣಿಕ್ ರಸ್ತೆ, ಬಸವೇಶ್ವರ ನಗರ, ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ 560079.",
-      insurance: "ನಾವು ಕ್ಲಿನಿಕ್‌ಗಳಿಗೆ ನೇರವಾಗಿ ಬಿಲ್ ಮಾಡುತ್ತೇವೆ. ವಿಮೆ ಅಥವಾ ಇಎಂಐ ಸೌಲಭ್ಯಗಳಿಗಾಗಿ ದಯವಿಟ್ಟು ನಿಮ್ಮ ಡೆಂಟಿಸ್ಟ್ ಅವರೊಂದಿಗೆ ಚರ್ಚಿಸಿ.",
-      cost: "ಬೆಲೆಗಳು ಬಳಸುವ ಮೆಟೀರಿಯಲ್ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿರುತ್ತದೆ. ಕ್ಲಿನಿಕ್‌ಗಳು ಬೆಲೆ ಪಟ್ಟಿಗಾಗಿ ನೇರವಾಗಿ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಬಹುದು.",
-      default: "ಡಾ. ಬಿ ಓರೋ-ಹೋಲ್ಡ್ ಲ್ಯಾಬ್ ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. ಕಸ್ಟಮ್ ಆರ್ಡರ್‌ಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ಡೆಂಟಿಸ್ಟ್ ಪೋರ್ಟಲ್ ಮೂಲಕ ಸ್ಕ್ಯಾನ್ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ ಅಥವಾ ವಾಟ್ಸಾಪ್ (+91 7550134175) ನಲ್ಲಿ ನೇರವಾಗಿ ತಂತ್ರಜ್ಞರೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ."
+      welcome: "ನಮಸ್ಕಾರ! ನಾನು ಓರೋ-ಹೋಲ್ಡ್ ಎಐ ಸಹಾಯಕ. ಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
+      default: "ಸಂಪರ್ಕಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. ಕಸ್ಟಮ್ ಆರ್ಡರ್‌ಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ಪೋರ್ಟಲ್ ಮೂಲಕ ಸ್ಕ್ಯಾನ್ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
     },
     te: {
-      welcome: "నమస్తే! నేను డాక్టర్ బి ఓరో-హోల్డ్ డెంటల్ ల్యాబ్ AI అసిస్టెంట్‌ని. ఈ రోజు నేను మీకు ఎలా సహాయపడగలను?",
-      turnaround: "సాధారణ జిర్కోనియా పునరుద్ధరణకు 3 పని దినాలు పడుతుంది. కస్టమ్ ఇంప్లాంట్ అబుట్‌మెంట్ లేదా ఫుల్-ఆర్చ్ బార్‌లకు 5 పని దినాలు పడుతుంది. ఎక్స్‌ప్రెస్ షిప్పింగ్ అందుబాటులో ఉంది.",
-      stl: "మేము అన్ని ఓపెన్ స్కానర్ ఎస్‌టిఎల్ (STL), పిఎల్‌వై (PLY), మరియు ఒబిజె (OBJ) డిజిటల్ ఇంప్రెషన్‌లను అంగీకరిస్తాము. మీ డెంటిస్ట్ పోర్టల్ డ్యాష్‌బోర్డ్‌లో నేరుగా అప్‌లోడ్ చేయండి.",
-      zirconia: "మేము 3D ప్రో మల్టీలేయర్ (1050 MPa బలం, 57% పారదర్శకత) మరియు అధిక బలం కలిగిన సాలిడ్ మోనోలిథిక్ జిర్కోనియాతో సహా ప్రీమియం జిర్కోనియా బ్రాండ్‌లను అందిస్తున్నాము.",
-      ship: "మేము బెంగళూరులో భౌతిక అల్జీనేట్ లేదా సిలికాన్ ఇంప్రెషన్ల కోసం ఉచిత స్థానిక కొరియర్ పికప్‌ని ఏర్పాటు చేస్తాము. డెంటిస్ట్ డ్యాష్‌బోర్డ్‌లో 'పికప్ రిక్వెస్ట్' ఫారమ్‌ను ఉపయోగించండి.",
-      pain: "చికిత్స తర్వాత ఏదైనా నొప్పి లేదా అసౌకర్యం ఉంటే దయచేసి వెంటనే మీ డెంటిస్ట్‌ను సంప్రదించండి. అవసరమైతే మేము అడ్జస్ట్‌మెంట్లు చేస్తాము.",
-      timing: "డాక్టర్ బి ఓరో-హోల్డ్ ల్యాబ్ సోమవారం నుండి శనివారం వరకు ఉదయం 9:00 నుండి సాయంత్రం 7:00 వరకు తెరిచి ఉంటుంది. ఆదివారం సెలవు.",
-      location: "మా ప్రధాన కార్యాలయం ఇక్కడ ఉంది: 1వ అంతస్తు, SR కాంప్లెక్స్, సిద్దయ్య పురాణిక్ రోడ్, బసవేశ్వర నగర్, బెంగళూరు, కర్ణాటక 560079.",
-      insurance: "మేము నేరుగా డెంటల్ క్లినిక్‌లకు బిల్ చేస్తాము. భీమా లేదా ఈఎంఐ (EMI) వివరాల కోసం మీ డెంటిస్ట్‌ను సంప్రదించండి.",
-      cost: "ధరలు ఉపయోగించే మెటీరియల్ బట్టి ఉంటాయి. డెంటిస్ట్‌లు పూర్తి ధరల పట్టిక కోసం మా సపోర్ట్‌ను సంప్రదించవచ్చు.",
-      default: "డాక్టర్ బి ఓరో-హోల్డ్ ల్యాబ్ సపోర్ట్‌ని సంప్రదించినందుకు ధన్యవాదాలు. కస్టమ్ ఆర్డర్ల కోసం, దయవిಟ್ಟು డెంటిస్ట్ పోర్టల్ ద్వారా స్కాన్‌లను అప్‌లోడ్ చేయండి లేదా నేరుగా వాట్సాప్ (+91 7550134175) లో టెక్నీషియన్‌తో కనెక్ట్ అవ్వండి."
+      welcome: "నమస్తే! నేను ఓరో-హోల్డ్ AI అసిస్టెంట్‌ని. ఈ రోజు నేను మీకు ఎలా సహాయపడగలను?",
+      default: "సంప్రదించినందుకు ధన్యవాదాలు. ఆర్డర్ల కోసం, దయవిట్టు పోర్టల్ ద్వారా స్కాన్‌లను అప్‌లోడ్ చేయండి."
     }
   };
+
+  // Comprehensive FAQ Database
+  const faqDatabase = [
+    { keys: ['what is oro-hold', 'what is dr b', 'about you', 'who are you'], answer: "Dr B's Oro-Hold Dental Lab is a professional dental laboratory that manufactures high-quality dental restorations and prosthetics for dentists and dental clinics. We focus on precision, quality, aesthetics, and timely delivery." },
+    { keys: ['treat patients directly', 'patient treatment', 'can i visit as a patient', 'treat patients'], answer: "No. We work exclusively with licensed dentists and dental clinics. Patients should visit their dentist for treatment." },
+    { keys: ['where is', 'location', 'located', 'where are you'], answer: "We are based in Bengaluru, Karnataka, serving dental clinics across India." },
+    { keys: ['working hours', 'opening hours', 'when are you open', 'business hours'], answer: "Monday to Saturday: 9:00 AM – 7:00 PM. Sunday: Closed" },
+    { keys: ['how can i contact', 'contact number', 'phone number', 'email id', 'contact support'], answer: "You can contact us by phone (+91 9108527755), WhatsApp, email (oroholddentallab@gmail.com), or through the Contact page on our website." },
+    { keys: ['customer support', 'technical support', 'help desk'], answer: "Yes. Our technical team is available during business hours to assist dentists." },
+    { keys: ['services do you provide', 'what do you make', 'products', 'what do you manufacture'], answer: "We manufacture: Zirconia Crowns, PFM Crowns, E-Max Crowns, Metal Crowns, Veneers, Inlays & Onlays, Dentures, Cast Partial Dentures, Implant Restorations, Surgical Guides, Orthodontic Appliances, Night Guards, Retainers, Splints, Temporary Crowns, and Smile Design." },
+    { keys: ['implant crowns', 'implant supported', 'implants'], answer: "Yes. We fabricate implant-supported crowns and prosthetics compatible with multiple implant systems." },
+    { keys: ['dentures', 'flexible dentures', 'complete dentures'], answer: "Yes. We provide complete, partial, flexible, and premium dentures." },
+    { keys: ['cad/cam', 'cad cam', 'cadcam'], answer: "Yes. We use advanced CAD/CAM technology for precise and accurate restorations." },
+    { keys: ['place an order', 'how to order', 'submit case'], answer: "Dentists can submit cases by: Online Order Form, WhatsApp, Courier, Lab Pickup, or Digital Scan Upload." },
+    { keys: ['intraoral scan', 'digital scan', 'upload scan', 'intra oral'], answer: "Yes. We accept digital scans from major intraoral scanners." },
+    { keys: ['file formats', 'which format', 'obj', 'ply', 'stl'], answer: "We accept: STL, PLY, OBJ, DCM, and ZIP Files." },
+    { keys: ['physical impressions', 'send impressions', 'silicone impression', 'alginate'], answer: "Yes. Physical impressions are accepted through courier or pickup service." },
+    { keys: ['pickup service', 'collection service', 'book a pickup', 'request pickup'], answer: "Yes, we provide pickup service in selected service areas." },
+    { keys: ['track my order', 'tracking status', 'order status'], answer: "Yes. Every case receives a tracking status." },
+    { keys: ['modify my order', 'change order', 'edit case'], answer: "Yes, you can modify your order if production has not yet started." },
+    { keys: ['cancel my order', 'stop order'], answer: "Orders can be cancelled before manufacturing begins." },
+    { keys: ['fabrication take', 'turnaround time', 'how long', 'delivery time'], answer: "Depending on the restoration: Temporary Crown: 1–2 days, Zirconia Crown: 3–5 days, PFM Crown: 3–5 days, Dentures: 5–7 days, Implant Cases: 5–10 days." },
+    { keys: ['express service', 'rush case', 'urgent order', 'express delivery'], answer: "Yes. Rush cases are available depending on workload." },
+    { keys: ['materials do you use', 'which material', 'premium material'], answer: "We use premium certified dental-grade materials from trusted manufacturers." },
+    { keys: ['materials safe', 'safe to use', 'biocompatible'], answer: "Yes. All materials are dental-grade, safe, and quality tested." },
+    { keys: ['quality checks', 'inspection', 'quality control'], answer: "Yes. Every restoration undergoes multiple quality inspections." },
+    { keys: ['handcrafted', 'hand finished', 'manual finish'], answer: "Many restorations combine CAD/CAM precision with expert hand finishing." },
+    { keys: ['digital dentistry', 'digital workflow'], answer: "Yes. We specialize in fully digital workflows." },
+    { keys: ['which scanners', 'supported scanners', 'itero', '3shape', 'medit', 'trios', 'primescan', 'carestream'], answer: "We support 3Shape, Medit, iTero, TRIOS, PrimeScan, Carestream, and all open systems." },
+    { keys: ['email scan', 'email files'], answer: "Yes, you can email scan files to us." },
+    { keys: ['deliver across india', 'pan india', 'all over india', 'shipping available'], answer: "Yes, we deliver across India using reliable national courier partners." },
+    { keys: ['courier services', 'which courier', 'shipping method'], answer: "Reliable national courier partners are used depending on your location." },
+    { keys: ['collect my case', 'collect directly', 'pick up directly'], answer: "Yes, you can collect your case directly from our lab." },
+    { keys: ['payment methods', 'how to pay', 'payment options', 'upi', 'credit card'], answer: "We accept UPI, Bank Transfer, Credit Card, Debit Card, and other online payment methods." },
+    { keys: ['provide invoices', 'get invoice', 'gst details'], answer: "Yes, we provide official invoices with GST details." },
+    { keys: ['monthly billing', 'billing cycle', 'monthly payment'], answer: "Yes, monthly billing is available for eligible partner clinics." },
+    { keys: ['warranty', 'guarantee', 'warranty details'], answer: "Warranty depends on the product and usage conditions. Please refer to our product catalogue for details." },
+    { keys: ['adjustment is required', 'adjustments', 'does not fit', 'crown does not fit'], answer: "We provide support for adjustments whenever applicable. Please contact our support team; we will evaluate the case and provide a suitable solution." },
+    { keys: ['recommend the right restoration', 'ai recommend', 'what crown should i choose', 'compare zirconia'], answer: "Our AI assistant can guide dentists based on the provided information, but the final clinical decision remains with the treating dentist." },
+    { keys: ['partner with', 'become a partner clinic', 'new dentists'], answer: "Yes. We welcome partnerships with dental clinics across India, including new dentists." },
+    { keys: ['lab support', 'technician support', 'discuss complex', 'technical guidance', 'speak to a lab expert'], answer: "Yes. Our technicians assist with case planning, technical guidance, and complex implant or restorative cases." },
+    { keys: ['shade consultation', 'request shade guide', 'custom shade'], answer: "Yes, we provide shade consultation for selected cases." },
+    { keys: ['custom restoration', 'custom order'], answer: "Yes, you can request custom restorations tailored to specific patient needs." },
+    { keys: ['prices', 'price list', 'pricing', 'shipping charges'], answer: "Please contact our support team or download the price list from the dentist portal for detailed pricing and shipping charges." }
+  ];
 
   // Switch Chat Language Welcome Message
   if (chatLang) {
@@ -596,54 +595,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
     });
-  }
-
-  // Voice Speech Recognition
-  if (voiceBtn && chatInput) {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (SpeechRecognition) {
-      const recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      const langLocales = { en: 'en-US', hi: 'hi-IN', ta: 'ta-IN', kn: 'kn-IN', te: 'te-IN' };
-      
-      recognition.onstart = () => {
-        voiceBtn.classList.add('recording');
-        voiceBtn.innerHTML = '🎙️';
-      };
-
-      recognition.onerror = () => {
-        voiceBtn.classList.remove('recording');
-        voiceBtn.innerHTML = '🎙️';
-      };
-
-      recognition.onend = () => {
-        voiceBtn.classList.remove('recording');
-        voiceBtn.innerHTML = '🎙️';
-      };
-
-      recognition.onresult = (event) => {
-        const resultText = event.results[0][0].transcript;
-        chatInput.value = resultText;
-        processUserChatMessage(resultText);
-      };
-
-      voiceBtn.addEventListener('click', () => {
-        recognition.lang = langLocales[chatLang.value] || 'en-US';
-        recognition.start();
-      });
-    } else {
-      voiceBtn.style.display = 'none';
-    }
-  }
-
-  // Speak bot response back
-  function speakResponse(text, langCode) {
-    if (!window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    const langLocales = { en: 'en-US', hi: 'hi-IN', ta: 'ta-IN', kn: 'kn-IN', te: 'te-IN' };
-    utterance.lang = langLocales[langCode] || 'en-US';
-    window.speechSynthesis.speak(utterance);
   }
 
   // Text message send triggers
@@ -676,44 +627,62 @@ document.addEventListener('DOMContentLoaded', () => {
     userMsgDiv.innerHTML = `${msg}<div class="chat-meta">${timeStr} <span style="color:#53bdeb; margin-left:4px;">✔✔</span></div>`;
     chatMessages.appendChild(userMsgDiv);
     chatInput.value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+    // Add Typing Indicator
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'chat-message bot typing-indicator-msg';
+    typingDiv.innerHTML = `<div class="typing-indicator"><span></span><span></span><span></span></div>`;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
     
     // Bot analysis logic
     const lang = chatLang.value;
     const lowerMsg = msg.toLowerCase();
-    let responseText = botDatabase[lang].default;
+    
+    let responseText = botDatabase[lang] ? botDatabase[lang].default : botDatabase['en'].default;
 
-    if (lowerMsg.includes('turnaround') || lowerMsg.includes('delivery') || lowerMsg.includes('दिनों') || lowerMsg.includes('நாட்கள்') || lowerMsg.includes('ದಿನಗಳು') || lowerMsg.includes('రోజులు')) {
-      responseText = botDatabase[lang].turnaround;
-    } else if (lowerMsg.includes('stl') || lowerMsg.includes('scan') || lowerMsg.includes('format') || lowerMsg.includes('स्कैन') || lowerMsg.includes('ஸ்கேன்') || lowerMsg.includes('ಸ್ಕ್ಯಾನ್') || lowerMsg.includes('స్కాన్')) {
-      responseText = botDatabase[lang].stl;
-    } else if (lowerMsg.includes('zirconia') || lowerMsg.includes('material') || lowerMsg.includes('grade') || lowerMsg.includes('crown') || lowerMsg.includes('ज़िरकोनिया') || lowerMsg.includes('சிர்கோனியா') || lowerMsg.includes('ಜಿರ್ಕೋನಿಯಾ') || lowerMsg.includes('జిర్కోనియా')) {
-      responseText = botDatabase[lang].zirconia;
-    } else if (lowerMsg.includes('ship') || lowerMsg.includes('pickup') || lowerMsg.includes('courier') || lowerMsg.includes('कूरियर') || lowerMsg.includes('கூரியர்') || lowerMsg.includes('ಕೊರಿಯర్') || lowerMsg.includes('కొరియర్')) {
-      responseText = botDatabase[lang].ship;
-    } else if (lowerMsg.includes('pain') || lowerMsg.includes('hurt') || lowerMsg.includes('discomfort') || lowerMsg.includes('दर्द') || lowerMsg.includes('வலி') || lowerMsg.includes('ನೋವು') || lowerMsg.includes('నొప్పి')) {
-      responseText = botDatabase[lang].pain;
-    } else if (lowerMsg.includes('time') || lowerMsg.includes('hours') || lowerMsg.includes('timing') || lowerMsg.includes('open') || lowerMsg.includes('समय') || lowerMsg.includes('நேரம்') || lowerMsg.includes('ಸಮಯ')) {
-      responseText = botDatabase[lang].timing;
-    } else if (lowerMsg.includes('location') || lowerMsg.includes('address') || lowerMsg.includes('where') || lowerMsg.includes('पता') || lowerMsg.includes('முகவரி') || lowerMsg.includes('ವಿಳಾಸ') || lowerMsg.includes('చిరునామా')) {
-      responseText = botDatabase[lang].location;
-    } else if (lowerMsg.includes('insurance') || lowerMsg.includes('emi') || lowerMsg.includes('cashless') || lowerMsg.includes('बीमा') || lowerMsg.includes('காப்பீடு') || lowerMsg.includes('ವಿಮೆ') || lowerMsg.includes('భీమా')) {
-      responseText = botDatabase[lang].insurance;
-    } else if (lowerMsg.includes('cost') || lowerMsg.includes('price') || lowerMsg.includes('fee') || lowerMsg.includes('दर') || lowerMsg.includes('விலை') || lowerMsg.includes('ಬೆಲೆ') || lowerMsg.includes('ధర')) {
-      responseText = botDatabase[lang].cost;
+    // Search in FAQ Database
+    let found = false;
+    for (let faq of faqDatabase) {
+      if (faq.keys.some(key => lowerMsg.includes(key))) {
+        responseText = faq.answer;
+        found = true;
+        break;
+      }
+    }
+    
+    // Fallbacks if not found (for some regional keywords retained from old logic)
+    if (!found) {
+      if (lowerMsg.includes('turnaround') || lowerMsg.includes('delivery') || lowerMsg.includes('दिनों') || lowerMsg.includes('நாட்கள்') || lowerMsg.includes('ದಿನಗಳು') || lowerMsg.includes('రోజులు')) {
+        responseText = "Standard zirconia restorations take 3-5 days. Dentures take 5-7 days. Express shipping is available.";
+      } else if (lowerMsg.includes('stl') || lowerMsg.includes('scan') || lowerMsg.includes('format') || lowerMsg.includes('स्कैन') || lowerMsg.includes('ஸ்கேன்') || lowerMsg.includes('ಸ್ಕ್ಯಾನ್') || lowerMsg.includes('స్కాన్')) {
+        responseText = "We accept all open scanner STL files, PLY, and OBJ digital impressions. Upload directly inside your Dentist Portal dashboard.";
+      } else if (lowerMsg.includes('zirconia') || lowerMsg.includes('material') || lowerMsg.includes('grade') || lowerMsg.includes('crown') || lowerMsg.includes('ज़िरकोनिया') || lowerMsg.includes('சிர்கோனியா') || lowerMsg.includes('ಜಿರ್ಕೋನಿಯಾ') || lowerMsg.includes('జిర్కోనియా')) {
+        responseText = "We offer premium zirconia brands including 3D Pro Multilayer and high-strength solid monolithic zirconia.";
+      } else if (lowerMsg.includes('ship') || lowerMsg.includes('pickup') || lowerMsg.includes('courier') || lowerMsg.includes('कूरियर') || lowerMsg.includes('கூரியர்') || lowerMsg.includes('ಕೊರಿಯర్') || lowerMsg.includes('కొరియర్')) {
+        responseText = "We arrange local courier pickup or use national couriers across India.";
+      } else if (lowerMsg.includes('pain') || lowerMsg.includes('hurt') || lowerMsg.includes('discomfort') || lowerMsg.includes('दर्द') || lowerMsg.includes('வலி') || lowerMsg.includes('ನೋವು') || lowerMsg.includes('నొప్పి')) {
+        responseText = "Please contact your prescribing dentist immediately for any adjustments.";
+      } else if (lowerMsg.includes('time') || lowerMsg.includes('hours') || lowerMsg.includes('timing') || lowerMsg.includes('open') || lowerMsg.includes('समय') || lowerMsg.includes('நேரம்') || lowerMsg.includes('ಸಮಯ')) {
+        responseText = "We are open Monday to Saturday: 9:00 AM – 7:00 PM. Closed on Sundays.";
+      }
     }
 
-    // Bot message render after short delay
+    // Bot message render after delay (simulating typing)
     setTimeout(() => {
+      // Remove typing indicator
+      if (chatMessages.contains(typingDiv)) {
+        chatMessages.removeChild(typingDiv);
+      }
+      
       const botMsgDiv = document.createElement('div');
       botMsgDiv.className = 'chat-message bot';
       const botTimeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       botMsgDiv.innerHTML = `${responseText}<div class="chat-meta">${botTimeStr}</div>`;
       chatMessages.appendChild(botMsgDiv);
       chatMessages.scrollTop = chatMessages.scrollHeight;
-
-      // Speak back
-      speakResponse(responseText, lang);
-    }, 600);
+    }, 1200);
   }
 
   // 6. Symptom Checker Checker Logic
