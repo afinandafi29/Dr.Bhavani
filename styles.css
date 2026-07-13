@@ -2728,7 +2728,7 @@ body {
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 80px 60px 80px;
+  padding: 80px 100px 80px;
   pointer-events: none;
   gap: 40px;
 }
@@ -2994,11 +2994,11 @@ body.dark-theme .service-card-content ul.service-features li {
 }
 
 .hero-arrow-btn.slide-prev {
-  left: 10px;
+  left: 20px;
 }
 
 .hero-arrow-btn.slide-next {
-  right: 10px;
+  right: 20px;
 }
 
 .hero-arrow-btn:hover {
