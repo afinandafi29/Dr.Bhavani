@@ -550,12 +550,16 @@ document.addEventListener('DOMContentLoaded', () => {
     { keys: ['talk to a person', 'talk to someone', 'contact support', 'customer care'], answer: "Of course. I can help connect you with our support team by phone (+91 9108527755), WhatsApp, or email." },
     { keys: ['help', 'support', 'assist me', 'i need help', 'can you help me', 'guide me'], answer: "I'm here to help! You can ask about: Our services, Uploading scans, Tracking orders, Pricing, Delivery, Payments, Support." },
     
-    // Core Business
+        { keys: ['do you offer invisible aligners', 'invisible aligners', 'clear aligners'], answer: "Yes! We manufacture premium clear aligners and orthodontic appliances. Please upload your scan to place an order." },
+    { keys: ['how much do dental implants cost', 'implant pricing', 'cost of implants'], answer: "Our custom implant abutments and implant-supported crowns are competitively priced. Please contact our support team on WhatsApp for the detailed pricing list." },
+    { keys: ['i want to book an appointment', 'book appointment'], answer: "To book an appointment or schedule a pickup/courier, please click the 'Book a Call' button in the navigation bar." },
+    { keys: ['do you offer teeth whitening', 'teeth whitening'], answer: "Yes, we provide professional teeth whitening trays and custom bleaching solutions for dental clinics." },
+// Core Business
     { keys: ['digital workflow'], answer: "Our digital workflow supports intraoral scans, CAD/CAM design, and secure file uploads for faster case processing." },
     { keys: ['what is oro-hold', 'what is dr b', 'about you', 'who are you'], answer: "Dr B's Oro-Hold Dental Lab is a professional dental laboratory that manufactures high-quality dental restorations and prosthetics for dentists and dental dental labs. We focus on precision, quality, aesthetics, and timely delivery." },
     { keys: ['treat patients directly', 'patient treatment', 'can i visit as a patient', 'treat patients'], answer: "No. We work exclusively with licensed dentists and dental dental labs. Patients should visit their dentist for treatment." },
     { keys: ['where is', 'location', 'located', 'where are you'], answer: "We are based in Bengaluru, Karnataka, serving dental dental labs across India." },
-    { keys: ['working hours', 'opening hours', 'when are you open', 'business hours'], answer: "Monday to Saturday: 9:00 AM – 7:00 PM. Sunday: Closed" },
+    { keys: ['working hours', 'opening hours', 'when are you open', 'business hours'], answer: "Monday to Saturday: 10:00 AM – 8:00 PM. Sunday: Closed" },
     { keys: ['how can i contact', 'contact number', 'phone number', 'email id', 'contact support'], answer: "You can contact us by phone (+91 9108527755), WhatsApp, email (oroholddentallab@gmail.com), or through the Contact page on our website." },
     { keys: ['customer support', 'technical support', 'help desk'], answer: "Yes. Our technical team is available during business hours to assist dentists." },
     { keys: ['services do you provide', 'what do you make', 'products', 'what do you manufacture'], answer: "We manufacture: Zirconia Crowns, PFM Crowns, E-Max Crowns, Metal Crowns, Veneers, Inlays & Onlays, Dentures, Cast Partial Dentures, Implant Restorations, Surgical Guides, Orthodontic Appliances, Night Guards, Retainers, Splints, Temporary Crowns, and Smile Design." },
