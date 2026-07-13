@@ -3145,7 +3145,7 @@ body.dark-theme .service-card-content ul.service-features li {
 }
 
 .logo-container img {
-  height: 65px;
+  height: 85px;
   width: auto;
   object-fit: contain;
   transition: var(--transition);
@@ -3159,7 +3159,7 @@ body.dark-theme .service-card-content ul.service-features li {
 }
 
 .logo-primary {
-  font-size: 13px;
+  font-size: 16px;
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -3170,7 +3170,7 @@ body.dark-theme .service-card-content ul.service-features li {
 }
 
 .logo-brand {
-  font-size: 28px;
+  font-size: 34px;
   font-family: var(--font-heading);
   font-weight: 700;
   color: #ffffff;
