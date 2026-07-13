@@ -145,6 +145,9 @@ button, input, select, textarea {
   justify-content: space-between;
   align-items: center;
   height: 90px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 4%;
 }
 
 .logo {
