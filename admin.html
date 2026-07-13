@@ -389,13 +389,13 @@
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-title">Active Orders</div>
-          <div class="kpi-value" id="kpiActiveOrders">48</div>
-          <div class="kpi-sub">12% increase this week</div>
+          <div class="kpi-value" id="kpiActiveOrders">0</div>
+          <div class="kpi-sub">Data pending</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-title">Milled Crowns (Today)</div>
-          <div class="kpi-value" id="kpiMilledToday">72</div>
-          <div class="kpi-sub">100% CAD accuracy</div>
+          <div class="kpi-value" id="kpiMilledToday">0</div>
+          <div class="kpi-sub">Data pending</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-title">Milling Unit Status</div>
@@ -404,8 +404,8 @@
         </div>
         <div class="kpi-card">
           <div class="kpi-title">Avg. Turnaround</div>
-          <div class="kpi-value">2.7 Days</div>
-          <div class="kpi-sub">0.2 days efficiency gain</div>
+          <div class="kpi-value">0 Days</div>
+          <div class="kpi-sub">Data pending</div>
         </div>
       </div>
 
@@ -493,17 +493,12 @@
   <!-- Live interactive logic -->
   <script>
     // Initial State Database
-    let labOrders = [
-      { id: "OH-9021", doctor: "Dr. Ananya Rao", patient: "S. Sharma", type: "Monolithic Zirconia (Tooth #16)", status: "Milling", progress: 65, machine: "Unit 1" },
-      { id: "OH-9022", doctor: "Dr. Vivek Shetty", patient: "K. Patel", type: "Custom Titanium Abutment (#24)", status: "CAD Design", progress: 0, machine: null },
-      { id: "OH-9023", doctor: "Dr. Priya Nair", patient: "A. Kumar", type: "E.Max Veneer (Tooth #11)", status: "Glazing", progress: 0, machine: null },
-      { id: "OH-9018", doctor: "Dr. Arjun Mehta", patient: "M. Sen", type: "Zirconia Bridge (3 Unit)", status: "Shipped", progress: 100, machine: null }
-    ];
+    let labOrders = [];
 
     let millingMachines = [
-      { id: "Unit 1", type: "Zirconia Milling", status: "Milling", targetOrder: "OH-9021", progress: 65 },
+      { id: "Unit 1", type: "Zirconia Milling", status: "Standby", targetOrder: null, progress: 0 },
       { id: "Unit 2", type: "PMMA Temporaries", status: "Standby", targetOrder: null, progress: 0 },
-      { id: "Unit 3", type: "Titanium Milling", status: "Calibration", targetOrder: null, progress: 0 },
+      { id: "Unit 3", type: "Titanium Milling", status: "Standby", targetOrder: null, progress: 0 },
       { id: "Unit 4", type: "Ceramics Milling", status: "Standby", targetOrder: null, progress: 0 },
       { id: "Unit 5", type: "Aligner Trimming", status: "Standby", targetOrder: null, progress: 0 }
     ];
