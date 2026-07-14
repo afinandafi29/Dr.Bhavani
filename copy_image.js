@@ -1,12 +1,26 @@
 const fs = require('fs');
 
-const src = "/Users/afi/.gemini/antigravity-ide/brain/f4e00063-a168-492e-aec5-c296dbaec316/indian_dentist_patient_1783859454143.png";
-const dest = "/Users/afi/Downloads/Dr.Bhavani-main/public/assets/images/indian_dentist_patient.png";
+const files = [
+  {
+    src: "/Users/afi/.gemini/antigravity-ide/brain/347e6856-2534-404d-973a-ea0e9a8f6bb8/dental_lab_1_1783951237953.png",
+    dest: "./dental_lab_1.png"
+  },
+  {
+    src: "/Users/afi/.gemini/antigravity-ide/brain/347e6856-2534-404d-973a-ea0e9a8f6bb8/dental_lab_2_1783951258455.png",
+    dest: "./dental_lab_2.png"
+  },
+  {
+    src: "/Users/afi/.gemini/antigravity-ide/brain/347e6856-2534-404d-973a-ea0e9a8f6bb8/dental_lab_3_1783951280068.png",
+    dest: "./dental_lab_3.png"
+  }
+];
 
-try {
-  const data = fs.readFileSync(src);
-  fs.writeFileSync(dest, data);
-  console.log("Successfully copied image using read/write sync!");
-} catch (err) {
-  console.error("Failed to copy image:", err.message);
-}
+files.forEach(file => {
+  try {
+    const data = fs.readFileSync(file.src);
+    fs.writeFileSync(file.dest, data);
+    console.log(`Successfully copied ${file.dest}`);
+  } catch (err) {
+    console.error(`Failed to copy ${file.dest}:`, err.message);
+  }
+});

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smile & Lab Gallery | Dr B's Oro-Hold Dental Lab</title>
   <meta name="description" content="Browse beautiful smile makeovers, our digital workflow, 3D printing facility, and zirconia crowns crafted at Dr B's Oro-Hold Dental Lab.">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=16">
   <link rel="icon" type="image/png" href="dr logo.png">
 
   <meta property="og:title" content="Smile & Lab Gallery | Dr B's Oro-Hold Dental Lab">
@@ -34,9 +34,8 @@
               <li><a href="services.html" class="nav-link">Services</a></li>
               <li><a href="contact.html" class="nav-link">Contact</a></li>
               <li><a href="login.html" class="nav-link">Login</a></li>
-              <li><a href="appointment.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 30px; font-weight: 600; text-transform: none; font-size: 14px; margin: 0; display: inline-flex; align-items: center; justify-content: center; height: 100%; box-sizing: border-box; line-height: normal;">Book a Call</a></li>
+              <li><a href="tel:+919108527755" class="btn btn-primary" style="padding: 10px 24px; border-radius: 30px; font-weight: 600; text-transform: none; font-size: 14px; margin: 0; display: inline-flex; align-items: center; justify-content: center; height: 100%; box-sizing: border-box; line-height: normal;">Book a Call</a></li>
             </ul>
-            </div>
           </div>
           <button class="hamburger" aria-label="Toggle Navigation">
             <span></span>
@@ -46,16 +45,29 @@
         </div>
       </header>
 
-  <!-- Mobile Menu -->
+  
+  <!-- Mobile Sidebar Drawer -->
   <div class="mobile-menu">
-                            <ul class="mobile-links">
+    <ul class="mobile-links">
       <li><a href="index.html" class="mobile-link">Home</a></li>
-      <li><a href="about.html" class="mobile-link">About</a></li>
-      <li><a href="services.html" class="mobile-link">Services</a></li>
-      <li><a href="contact.html" class="mobile-link">Contact</a></li>
-      <li><a href="appointment.html" class="btn btn-black">Book Appointment</a></li>
+      <li><a href="about.html" class="mobile-link">About Us</a></li>
+      <li><a href="services.html" class="mobile-link">Our Services</a></li>
+      <li><a href="treatments.html" class="mobile-link">Treatments &amp; Solutions</a></li>
+      <li><a href="gallery.html" class="mobile-link">Smile Gallery</a></li>
+      <li><a href="faq.html" class="mobile-link">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+      <li><a href="login.html" class="mobile-link">Login</a></li>
+      <li style="margin-top: 15px;">
+        <a href="tel:+919108527755" class="btn btn-primary" style="width: 100%; justify-content: center; display: inline-flex; align-items: center; gap: 8px;">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg" style="color:var(--black);">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          Book a Call
+        </a>
+      </li>
     </ul>
   </div>
+
 
   <!-- Gallery Grid Section -->
   <section class="section">
@@ -69,7 +81,7 @@
           <button class="btn btn-primary filter-btn active" data-filter="all" style="padding: 10px 24px; border-radius: 20px; font-size: 13px; font-weight: 600;">All restorations</button>
           <button class="btn btn-black filter-btn" data-filter="smile-makeovers" style="padding: 10px 24px; border-radius: 20px; font-size: 13px; font-weight: 600;">Smile Makeovers</button>
           <button class="btn btn-black filter-btn" data-filter="technology" style="padding: 10px 24px; border-radius: 20px; font-size: 13px; font-weight: 600;">Lab Technology</button>
-          <button class="btn btn-black filter-btn" data-filter="dental lab" style="padding: 10px 24px; border-radius: 20px; font-size: 13px; font-weight: 600;">Clinical Shots</button>
+          <button class="btn btn-black filter-btn" data-filter="dental lab" style="padding: 10px 24px; border-radius: 20px; font-size: 13px; font-weight: 600;">Dental Lab Shots</button>
         </div>
       </div>
       
@@ -79,7 +91,7 @@
 
         <!-- Item 1 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="technology">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800" alt="Advanced CAD/CAM Dental Lab Milling">
+          <img src="public/assets/images/dental_lab_shot_1.jpg" alt="Advanced CAD/CAM Dental Lab Milling">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Technology</span>
             <h3 class="gallery-item-title">State-of-the-Art Dental CAD/CAM Lab Milling</h3>
@@ -88,7 +100,7 @@
 
         <!-- Item 2 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="smile-makeovers">
-          <img src="public/assets/images/smile-design.jpg" alt="Smile Design Makeover">
+          <img src="public/assets/images/smile_makeover.jpg" alt="Smile Design Makeover">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Smile Makeovers</span>
             <h3 class="gallery-item-title">Smile Design Makeover</h3>
@@ -97,7 +109,7 @@
 
         <!-- Item 3 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="dental lab">
-          <img src="public/assets/images/whitening.jpg" alt="In-Office Teeth Whitening">
+          <img src="public/assets/images/teeth_whitening.jpg" alt="In-Office Teeth Whitening">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Dental Lab</span>
             <h3 class="gallery-item-title">In-Office Teeth Whitening</h3>
@@ -106,7 +118,7 @@
 
         <!-- Item 4 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="smile-makeovers">
-          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=800" alt="Natural Healthy Smile Design Makeover">
+          <img src="public/assets/images/porcelain_veneers.jpg" alt="Natural Healthy Smile Design Makeover">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Smile Makeovers</span>
             <h3 class="gallery-item-title">Natural Smile Design Makeover</h3>
@@ -115,25 +127,25 @@
 
         <!-- Item 5 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="dental lab">
-          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800" alt="Modern Sterilization & Nursing Support">
+          <img src="public/assets/images/dental_lab_shot_2.jpg" alt="Modern Sterilization & & Nursing Support">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Dental Lab</span>
-            <h3 class="gallery-item-title">Clinical Nursing & Sterilization Support</h3>
+            <h3 class="gallery-item-title">Dental Lab Nursing & Sterilization Support</h3>
           </div>
         </div>
 
         <!-- Item 6 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="dental lab">
-          <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=800" alt="State-of-the-Art Modern Dental Dental Lab Lobby">
+          <img src="public/assets/images/gemini_generated_hero_1.png" alt="State-of-the-Art Modern dental lab Lobby">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Dental Lab</span>
-            <h3 class="gallery-item-title">State-of-the-Art Modern Dental Dental Lab Lobby</h3>
+            <h3 class="gallery-item-title">State-of-the-Art Modern dental lab Lobby</h3>
           </div>
         </div>
 
         <!-- Item 7 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="smile-makeovers">
-          <img src="public/assets/images/aligners.jpg" alt="Digital Orthodontic Aligners">
+          <img src="public/assets/images/clear_aligners_braces.jpg" alt="Digital Orthodontic Aligners">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Smile Makeovers</span>
             <h3 class="gallery-item-title">Digital Orthodontic Aligners</h3>
@@ -142,7 +154,7 @@
 
         <!-- Item 8 -->
         <div class="gallery-item swiper-slide" style="width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" data-category="technology">
-          <img src="public/assets/images/checkup.jpg" alt="3D Imaging Diagnostics">
+          <img src="public/assets/images/preventive_dental_care.jpg" alt="3D Imaging Diagnostics">
           <div class="gallery-item-overlay">
             <span class="gallery-item-cat">Technology</span>
             <h3 class="gallery-item-title">3D Imaging Diagnostics</h3>
@@ -160,7 +172,7 @@
     <div class="container" style="text-align: center;">
       <h2 style="font-size: 38px; margin-bottom: 20px;">Ready to Hold Precision Behind Your Dental Lab's Success?</h2>
       <p style="font-size: 15px; font-weight: 300; margin-bottom: 40px; color: rgba(255, 255, 255, 0.85); max-width: 600px; margin-left: auto; margin-right: auto;">Partner with Dr B's Oro-Hold Dental Lab today. Experience ISO-certified accuracy and 3-day turnaround shipping across India.</p>
-      <a href="appointment.html" class="btn btn-primary">Request Lab Order Form</a>
+      <a href="tel:+919108527755" class="btn btn-primary">Request Lab Order Form</a>
     </div>
   </section>
 
@@ -176,22 +188,13 @@
                 <ul class="footer-links-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="team.html">Our Team</a></li>
-          <li><a href="team.html">Doctors</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="treatments.html">Treatments</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="pricing.html">Offers</a></li>
-          <li><a href="appointment.html">Book Appointment</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="blog.html">Events</a></li>
-          <li><a href="blog.html">News</a></li>
-                  <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-</ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>

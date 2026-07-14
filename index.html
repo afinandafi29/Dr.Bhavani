@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr B's Oro-Hold Dental Lab | Your Premium Dental Lab</title>
   <meta name="description" content="Welcome to Dr B's Oro-Hold Dental Lab. We specialize in premium monolithic zirconia crowns, custom implant abutments, clear aligners, and digital smile design. Holding precision behind every dentist in India.">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=16">
   <link rel="icon" type="image/png" href="dr logo.png">
 
   <meta property="og:title" content="Dr B's Oro-Hold Dental Lab | Your Premium Dental Lab">
@@ -18,26 +18,33 @@
 
   <!-- Hero Framed Wrapper -->
   <div class="hero-wrapper">
-    <!-- Hero Section (Static with UI Overlay) -->
     <section class="hero">
       <div class="hero-bg hero-slider">
-        <!-- Slide 1: Smiling Family -->
+        <!-- Slide 1: Smiling Patient -->
         <div class="hero-slide active">
-          <img src="public/assets/images/slide_smiling_family.png" alt="Healthy Smiles for Your Family" onerror="this.src='https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=1200'">
+          <img src="public/assets/images/slide_smiling_family.png" alt="Healthy Smiles at Oro-Hold Dental Lab">
         </div>
-        <!-- Slide 2: Dentist Treating Patient -->
+        <!-- Slide 2: Dental Professional -->
         <div class="hero-slide">
-          <img src="public/assets/images/slide_dentist_treating.png" alt="Expert Clinical Treatment" onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200'">
+          <img src="public/assets/images/slide_dentist_treating.png" alt="Expert Dental Lab Craftsmanship">
         </div>
-        <!-- Slide 3: Modern Dental Dental Lab -->
+        <!-- Slide 3: Modern Dental Lab -->
         <div class="hero-slide">
-          <img src="public/assets/images/slide_modern_clinic.png" alt="Modern Dental Dental Lab Lobby" onerror="this.src='https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=1200'">
+          <img src="public/assets/images/slide_modern_clinic.png" alt="Modern Dental Lab Equipment">
         </div>
       </div>
+
 
       <!-- Side Arrow Navigation Overlays -->
       <button class="hero-arrow-btn slide-prev" aria-label="Previous Slide">&#8249;</button>
       <button class="hero-arrow-btn slide-next" aria-label="Next Slide">&#8250;</button>
+
+      <!-- Hero Indicators -->
+      <div class="hero-indicators">
+        <button class="indicator active" aria-label="Slide 1"></button>
+        <button class="indicator" aria-label="Slide 2"></button>
+        <button class="indicator" aria-label="Slide 3"></button>
+      </div>
 
       <!-- Header / Navbar -->
       <header class="navbar navbar-transparent">
@@ -50,16 +57,15 @@
             </span>
           </a>
           <div class="nav-pills-wrapper" style="position: relative; flex-grow: 1; display: flex; justify-content: center; align-items: center;">
-            <ul class="nav-links nav-pills" id="navLinksList" style="align-items: center; margin: 0;  transition: opacity 0.3s; gap: 8px;">
+            <ul class="nav-links nav-pills" id="navLinksList" style="align-items: center; margin: 0; transition: opacity 0.3s; gap: 8px;">
               
               <li><a href="index.html" class="nav-link">Home</a></li>
               <li><a href="about.html" class="nav-link">About</a></li>
               <li><a href="services.html" class="nav-link">Services</a></li>
               <li><a href="contact.html" class="nav-link">Contact</a></li>
               <li><a href="login.html" class="nav-link">Login</a></li>
-              <li><a href="appointment.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 30px; font-weight: 600; text-transform: none; font-size: 14px; margin: 0; display: inline-flex; align-items: center; justify-content: center; height: 100%; box-sizing: border-box; line-height: normal;">Book a Call</a></li>
+              <li><a href="tel:+919108527755" class="btn btn-primary" style="padding: 10px 24px; border-radius: 30px; font-weight: 600; text-transform: none; font-size: 14px; margin: 0; display: inline-flex; align-items: center; justify-content: center; height: 100%; box-sizing: border-box; line-height: normal;">Book a Call</a></li>
             </ul>
-            </div>
           </div>
           <button class="hamburger" aria-label="Toggle Navigation">
             <span></span>
@@ -68,6 +74,29 @@
           </button>
         </div>
       </header>
+
+  <!-- Mobile Sidebar Drawer -->
+  <div class="mobile-menu">
+    <ul class="mobile-links">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About Us</a></li>
+      <li><a href="services.html" class="mobile-link">Our Services</a></li>
+      <li><a href="treatments.html" class="mobile-link">Treatments &amp; Solutions</a></li>
+      <li><a href="gallery.html" class="mobile-link">Smile Gallery</a></li>
+      <li><a href="faq.html" class="mobile-link">FAQ</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+      <li><a href="login.html" class="mobile-link">Login</a></li>
+      <li style="margin-top: 15px;">
+        <a href="tel:+919108527755" class="btn btn-primary" style="width: 100%; justify-content: center; display: inline-flex; align-items: center; gap: 8px;">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg" style="color:var(--black);">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          Book a Call
+        </a>
+      </li>
+    </ul>
+  </div>
+
 
       <!-- Hero Main Content Overlay -->
       <div class="hero-content-overlay">
@@ -91,22 +120,12 @@
           </div>
           <div class="tag-row">
             <a href="services.html" class="tag-pill tag-glass">Precision Milling</a>
-            <a href="contact.html" class="tag-pill tag-glass">B2B Support</a>
-            <a href="appointment.html" class="tag-pill tag-glass">Send Scans</a>
           </div>
         </div>
 
 
       </div>
-    </section>
-    
-    <!-- Progress Tracking Bar -->
-    <div class="progress-bar-container">
-      <div class="progress-step">Smile Assessment</div>
-      <div class="progress-step">Care Planning</div>
-      <div class="progress-step">Treatment Process</div>
-      <div class="progress-step">Dental Maintenance</div>
-    </div>
+    </section></div>
   </div>
 
 
@@ -119,7 +138,7 @@
         <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
       </div>
       <div style="width: 100%; height: 400px; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); border: 1px solid var(--border-color);">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800" alt="Dr B's Oro-Hold Dental Lab Dentist Consultation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+        <img src="public/assets/images/dental_lab_shot_2.jpg" alt="Dr B's Oro-Hold Dental Lab Dentist Consultation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
       </div>
     </div>
   </section>
@@ -137,14 +156,13 @@
         <div class="service-card service-grid-card" data-category="implants">
           <div class="service-card-image">
             <span class="service-tag">Implantology</span>
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600" alt="Dental Implants" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600'">
+            <img src="public/assets/images/dental_implants.jpg" alt="Dental Implants">
           </div>
           <div class="service-card-content">
             <h3>Dental Implants</h3>
             <p>Replace missing teeth with natural-looking, long-lasting dental implants designed for durability and comfort.</p>
             <ul class="service-features">
               <li>Titanium & Zirconia materials</li>
-              <li>Cashless insurance support</li>
               <li>High fit accuracy & marginal seal</li>
             </ul>
             <a href="implants.html" class="btn btn-secondary" style="margin-top: 15px; display: inline-block;">Learn More</a>
@@ -155,7 +173,7 @@
         <div class="service-card service-grid-card" data-category="cosmetic">
           <div class="service-card-image">
             <span class="service-tag">Esthetics</span>
-            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=600" alt="Smile Makeover" onerror="this.src='https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=600'">
+            <img src="public/assets/images/smile_makeover.jpg" alt="Smile Makeover">
           </div>
           <div class="service-card-content">
             <h3>Smile Makeover</h3>
@@ -173,11 +191,11 @@
         <div class="service-card service-grid-card" data-category="cosmetic">
           <div class="service-card-image">
             <span class="service-tag">Cosmetic</span>
-            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=600" alt="Teeth Whitening" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600'">
+            <img src="public/assets/images/teeth_whitening.jpg" alt="Teeth Whitening">
           </div>
           <div class="service-card-content">
             <h3>Teeth Whitening</h3>
-            <p>Professional clinical bleaching systems for a brighter, stain-free smile without compromising tooth enamel safety.</p>
+            <p>Professional dental lab bleaching systems for a brighter, stain-free smile without compromising tooth enamel safety.</p>
             <ul class="service-features">
               <li>In-office laser whitening</li>
               <li>Up to 8 shades lighter</li>
@@ -191,7 +209,7 @@
         <div class="service-card service-grid-card" data-category="restorative">
           <div class="service-card-image">
             <span class="service-tag">Endodontics</span>
-            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600" alt="Root Canal Treatment" onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600'">
+            <img src="public/assets/images/root_canal_treatment.jpg" alt="Root Canal Treatment">
           </div>
           <div class="service-card-content">
             <h3>Root Canal Treatment</h3>
@@ -209,7 +227,7 @@
         <div class="service-card service-grid-card" data-category="orthodontic">
           <div class="service-card-image">
             <span class="service-tag">Orthodontics</span>
-            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=600" alt="Clear Aligners & Braces" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=600'">
+            <img src="public/assets/images/clear_aligners_braces.jpg" alt="Clear Aligners &amp; Braces">
           </div>
           <div class="service-card-content">
             <h3>Clear Aligners & Braces</h3>
@@ -227,7 +245,7 @@
         <div class="service-card service-grid-card" data-category="restorative">
           <div class="service-card-image">
             <span class="service-tag">Prosthetics</span>
-            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=600" alt="Dental Crowns & Bridges" onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600'">
+            <img src="public/assets/images/dental_crowns_bridges.jpg" alt="Dental Crowns &amp; Bridges">
           </div>
           <div class="service-card-content">
             <h3>Dental Crowns & Bridges</h3>
@@ -245,7 +263,7 @@
         <div class="service-card service-grid-card" data-category="cosmetic">
           <div class="service-card-image">
             <span class="service-tag">Cosmetic</span>
-            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600" alt="Porcelain Veneers" onerror="this.src='https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=600'">
+            <img src="public/assets/images/porcelain_veneers.jpg" alt="Porcelain Veneers">
           </div>
           <div class="service-card-content">
             <h3>Porcelain Veneers</h3>
@@ -263,7 +281,7 @@
         <div class="service-card service-grid-card" data-category="surgical">
           <div class="service-card-image">
             <span class="service-tag">Surgery</span>
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600" alt="Wisdom Tooth Extraction" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600'">
+            <img src="public/assets/images/wisdom_tooth_extraction.jpg" alt="Wisdom Tooth Extraction">
           </div>
           <div class="service-card-content">
             <h3>Wisdom Tooth Extraction</h3>
@@ -271,7 +289,6 @@
             <ul class="service-features">
               <li>Advanced local anesthesia control</li>
               <li>Rapid recovery surgery methods</li>
-              <li>Post-operative support tracking</li>
             </ul>
             <a href="treatments.html" class="btn btn-secondary" style="margin-top: 15px; display: inline-block;">Learn More</a>
           </div>
@@ -281,7 +298,7 @@
         <div class="service-card service-grid-card" data-category="preventive">
           <div class="service-card-image">
             <span class="service-tag">Preventive</span>
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=600" alt="Preventive Dental Care" onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=600'">
+            <img src="public/assets/images/preventive_dental_care.jpg" alt="Preventive Dental Care">
           </div>
           <div class="service-card-content">
             <h3>Preventive Dental Care</h3>
@@ -306,7 +323,7 @@
     <div class="container credentials-grid">
       <div>
         <h2 style="font-size: 40px; margin-bottom: 24px;">Dr B's Oro-Hold Dental Lab&apos;s Credentials</h2>
-        <p style="font-size: 15px; font-weight: 300; line-height: 1.8; margin-bottom: 30px; color: rgba(255, 255, 255, 0.85);">With comprehensive clinical training, global certifications, and a focus on premium aesthetics, Dr B's Oro-Hold Dental Lab delivers unparalleled results. Our clinical skill bars display our expertise across specialized areas.</p>
+        <p style="font-size: 15px; font-weight: 300; line-height: 1.8; margin-bottom: 30px; color: rgba(255, 255, 255, 0.85);">With comprehensive dental lab training, global certifications, and a focus on premium aesthetics, Dr B's Oro-Hold Dental Lab delivers unparalleled results. Our dental lab skill bars display our expertise across specialized areas.</p>
         <a href="about.html" class="btn btn-secondary ">View Full Team Bio</a>
       </div>
       <div class="skill-list">
@@ -449,7 +466,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Absolutely! Our professional in-office whitening and customized take-home kits are fully clinical-grade, safe, and designed to protect your enamel while delivering up to 8 shades of whitening.
+              Absolutely! Our professional in-office whitening and customized take-home kits are fully professional-grade, safe, and designed to protect your enamel while delivering up to 8 shades of whitening.
             </div>
           </div>
         </div>
@@ -490,22 +507,13 @@
                 <ul class="footer-links-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="team.html">Our Team</a></li>
-          <li><a href="team.html">Doctors</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="treatments.html">Treatments</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="pricing.html">Offers</a></li>
-          <li><a href="appointment.html">Book Appointment</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="blog.html">Events</a></li>
-          <li><a href="blog.html">News</a></li>
-                  <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-</ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>
@@ -593,12 +601,12 @@
 
             <!-- WhatsApp suggestion quick FAQ chips -->
             <div class="whatsapp-suggestion-chips" id="whatsappChips">
-              <button class="whatsapp-chip" data-question="What are your opening hours?">Opening Hours</button>
-              <button class="whatsapp-chip" data-question="Do you offer invisible aligners?">Invisible Aligners</button>
-              
-              <button class="whatsapp-chip" data-question="I want to book an appointment.">Book Appointment</button>
-              <button class="whatsapp-chip" data-question="Do you offer teeth whitening?">Teeth Whitening</button>
-              <button class="whatsapp-chip" data-question="Where is the dental lab located?">Location</button>
+              <button class="whatsapp-chip" data-question="what are your opening hours">Opening Hours</button>
+              <button class="whatsapp-chip" data-question="invisible aligners">Invisible Aligners</button>
+              <button class="whatsapp-chip" data-question="implant pricing">Implant Pricing</button>
+              <button class="whatsapp-chip" data-question="book appointment">Book Appointment</button>
+              <button class="whatsapp-chip" data-question="teeth whitening">Teeth Whitening</button>
+              <button class="whatsapp-chip" data-question="where are you located">Location</button>
             </div>
             
             <!-- Input Bar -->

@@ -147,7 +147,7 @@ button, input, select, textarea {
   height: 90px;
   width: 100%;
   max-width: 100%;
-  padding: 0 4%;
+  padding: 0 16px;
 }
 
 .logo {
@@ -212,38 +212,51 @@ button, input, select, textarea {
 }
 
 /* Mobile Nav Overlay */
+/* Mobile Nav Sidebar Drawer */
 .mobile-menu {
   position: fixed;
-  top: 90px;
-  left: 0;
-  width: 100%;
-  background-color: var(--white);
-  border-bottom: 1px solid rgba(198, 162, 101, 0.15);
-  padding: 24px;
-  display: none;
+  top: 0;
+  right: -100%; /* Slide out off-screen to the right */
+  width: 300px;
+  height: 100vh;
+  background-color: rgba(11, 11, 14, 0.98); /* Sleek dark background matching dark theme */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(198, 162, 101, 0.2); /* Gold border highlight */
+  padding: 100px 30px 40px 30px; /* Leave space at top for navbar height */
+  transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 999;
+  display: none; /* Hide on desktop */
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
 }
 
 .mobile-menu.active {
-  display: block;
-  animation: slideDown 0.4s ease forwards;
+  right: 0; /* Slide in drawer */
 }
 
 .mobile-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  width: 100%;
 }
 
 .mobile-link {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-decoration: none;
   display: block;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.3s;
+}
+
+.mobile-link:hover, .mobile-link.active {
+  color: var(--gold) !important;
 }
 
 .mobile-menu .btn {
@@ -2503,13 +2516,18 @@ body[style*="contrast"] span {
 }
 @media (max-width: 768px) {
   .global-ai-popup {
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    max-height: 100vh;
-    border-radius: 0;
-    z-index: 9999;
+    position: fixed !important;
+    bottom: 210px !important; /* Above stacked floating triggers */
+    right: 16px !important;
+    left: auto !important;
+    width: calc(100% - 32px) !important;
+    max-width: 350px !important;
+    height: 380px !important;
+    max-height: 50vh !important;
+    border-radius: 16px !important;
+    z-index: 9999 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important;
   }
 }
 
@@ -2675,13 +2693,13 @@ body {
 }
 
 .nav-pills-wrapper {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(30px) saturate(50%);
-  -webkit-backdrop-filter: blur(30px) saturate(50%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 40px;
-  padding: 6px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 .nav-pills {
@@ -2691,7 +2709,7 @@ body {
 
 .nav-pills .nav-link {
   color: #fff;
-  padding: 10px 24px;
+  padding: 8px 16px;
   border-radius: 30px;
   text-transform: capitalize;
   font-size: 14px;
@@ -3370,3 +3388,490 @@ body.dark-theme .service-card-content ul.service-features li {
   50% { opacity: 1; transform: scale(1.1); }
   100% { opacity: 0.6; transform: scale(0.95); }
 }
+
+/* Global rule to hide timing subheader inside the AI chatbot window */
+.ai-chat-header-info div span {
+  display: none !important;
+}
+
+
+/* --- COMPREHENSIVE MOBILE RESPONSIVENESS (Premium Dark Theme App Layout) --- */
+@media (max-width: 768px) {
+  /* Back (Dark) theme base for Mobile screens */
+  body.dark-theme, body {
+    background-color: #0b0b0e !important; /* Very dark black background */
+    color: #ffffff !important; /* White text */
+  }
+
+  /* Typography */
+  h1, .hero h1 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+    color: #ffffff !important; /* White text */
+    font-weight: 800 !important;
+    text-shadow: none !important;
+  }
+  h2, .section-header h2, .welcome-content h2, .treatment-content h2 {
+    font-size: 22px !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  h3, .service-card-content h3 {
+    font-size: 18px !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  p, .hero-desc, .service-card-content p, .treatment-content p, .team-desc {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.7) !important; /* Muted translucent text */
+    text-shadow: none !important;
+  }
+
+  /* Header / Navbar */
+  .navbar-transparent {
+    background-color: rgba(11, 11, 14, 0.96) !important; /* Dark solid background for visibility */
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    position: fixed !important;
+    height: 80px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  .nav-container {
+    height: 80px !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .nav-pills-wrapper {
+    display: none !important; /* Remove nav links from top header on mobile */
+  }
+  .logo-text-block {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important;
+  }
+  .logo-primary {
+    color: var(--gold) !important; /* Premium Gold */
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    text-shadow: none !important;
+  }
+  .logo-brand {
+    color: #ffffff !important; /* White text */
+    font-size: 22px !important; /* Made even bigger */
+    font-weight: 900 !important;
+    text-shadow: none !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+  .logo-container img {
+    height: 72px !important; /* Made even bigger */
+  }
+  .hamburger {
+    display: block !important; /* Restored sidebar button */
+    z-index: 1002 !important; /* Keep above sidebar drawer */
+  }
+  .hamburger span {
+    background-color: var(--gold) !important; /* Gold hamburger bars */
+  }
+
+  /* Mobile sidebar drawer (Restored & styled as buttons) */
+  .mobile-menu {
+    display: block !important; /* Restored sidebar drawer */
+    background-color: rgba(11, 11, 14, 0.99) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6) !important;
+    z-index: 1001 !important;
+    padding: 100px 20px 30px 20px !important;
+    overflow-y: auto !important;
+  }
+  
+  /* Credentials Skill label colors fix (3rd image) */
+  .skill-label-container {
+    color: #ffffff !important;
+  }
+  .mobile-links {
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .mobile-link {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    display: block !important;
+    padding: 12px 18px !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important; /* Beautiful buttons style */
+    transition: all 0.3s ease !important;
+    text-align: center !important;
+  }
+  .mobile-link:hover, .mobile-link.active {
+    background-color: rgba(198, 162, 101, 0.15) !important;
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+  }
+
+  /* Hero Slider Mobile Styles Moved to the End of Media Query for Specificity */
+
+  /* Close button inside sidebar menu drawer */
+  .mobile-menu-close {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    background: none !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 38px !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+    z-index: 1003 !important;
+    padding: 4px !important;
+    transition: color 0.2s !important;
+  }
+  .mobile-menu-close:hover {
+    color: var(--gold) !important;
+  }
+
+  /* Clean Dark Section Cards (app feel) */
+  section, .treatment-section, .services-section, .about-section {
+    padding: 40px 16px !important;
+    margin: 16px !important;
+    background-color: #121216 !important; /* Dark card background */
+    border-radius: 20px !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+  .section.bg-black-section {
+    background-color: #0b0b0e !important;
+    border: none !important;
+  }
+  .section.bg-white {
+    background-color: #121216 !important;
+  }
+  .welcome-content {
+    padding: 0 !important;
+  }
+
+  /* App Service Cards Overhaul (Image 4 & 5 layout but Dark) */
+  .services-grid, .treatment-grid, .footer-grid, .stats-grid, .hero-features, .contact-grid, .team-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .service-card {
+    background: #121216 !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    padding: 16px !important;
+    transform: none !important;
+  }
+  .service-card:hover {
+    transform: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+  }
+  .service-card-image {
+    height: 180px !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+  .service-card-content {
+    padding: 16px 0 0 0 !important;
+  }
+  .service-card-content p {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+  .service-features li {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Treatment Layouts (aligned clean) */
+  .treatment-grid .treatment-image {
+    order: -1 !important;
+    margin-bottom: 16px !important;
+  }
+  .treatment-image img {
+    max-height: 200px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+  }
+  .treatment-features li {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Buttons formatting */
+  .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    display: inline-flex !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    border-radius: 30px !important;
+  }
+  .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  .btn-black {
+    background-color: #0b0b0e !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Floating Bottom Tab Nav Bar (Dark Mode - Image 4 & Image 5) */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: rgba(18, 18, 22, 0.96) !important; /* Dark translucent navigation bar */
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 -5px 25px rgba(0,0,0,0.3);
+  }
+  .mobile-bottom-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    font-weight: 600;
+    gap: 4px;
+    transition: color 0.2s;
+  }
+  .mobile-bottom-item.active {
+    color: var(--gold) !important; /* Gold active tab */
+  }
+
+  /* STACK AI CHAT BUTTON DIRECTLY ABOVE WHATSAPP BUTTON (ABOVE BOTTOM NAV BAR) */
+  .floating-whatsapp {
+    right: 20px !important;
+    bottom: 85px !important; /* Pushed up to sit right above the bottom tab navigation bar */
+    width: 50px !important;
+    height: 50px !important;
+    z-index: 999 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  }
+  .floating-whatsapp svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .floating-ai-trigger {
+    right: 20px !important; /* Right aligned with WhatsApp */
+    bottom: 145px !important; /* Positioned directly above WhatsApp (60px difference) */
+    width: 50px !important;
+    height: 50px !important;
+    z-index: 999 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  }
+  .floating-ai-trigger svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Forms alignment */
+  .appointment-form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    font-size: 16px !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+  }
+  .form-group label {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* FAQ area */
+  .faq-item {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+  }
+  .faq-question {
+    color: #ffffff !important;
+  }
+  .faq-answer {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  /* Chat window adjustments */
+  .chat-container {
+    width: 90vw !important;
+    right: 5vw !important;
+    bottom: 210px !important; /* Adjusted higher to sit cleanly above both stacked buttons */
+    height: 50vh !important;
+    max-height: 400px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    border-radius: 20px !important;
+  }
+  .whatsapp-chip {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* Footer styling (clean style on mobile) */
+  .footer {
+    background-color: #0b0b0e !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 40px 16px !important;
+    margin: 16px 0 0 0 !important;
+    box-shadow: none !important;
+  }
+  .footer h3, .footer h4 {
+    color: #ffffff !important;
+  }
+  .footer-links-list a, .footer-contact-list span, .footer-contact-list a {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding-top: 20px !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  /* REFINED HERO SLIDER UI/UX FOR MOBILE (DARK CARD THEME) */
+  .hero-wrapper {
+    padding: 96px 16px 0 16px !important;
+    margin: 0 !important;
+    background-color: #0b0b0e !important; /* Solid dark background */
+    width: 100% !important;
+  }
+  .hero {
+    height: auto !important;
+    min-height: auto !important;
+    border-radius: 20px !important; /* Premium rounded card style */
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: #121216 !important; /* Premium dark card background */
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important; /* Keeps image corners rounded */
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2) !important;
+  }
+  .hero-bg, .hero-slider {
+    position: relative !important;
+    height: 240px !important;
+    width: 100% !important;
+    border-radius: 20px 20px 0 0 !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+  }
+  .hero-slide {
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 20px 20px 0 0 !important;
+  }
+  .hero-slide img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 20px 20px 0 0 !important;
+    filter: brightness(0.9) !important;
+  }
+  .hero-content-overlay {
+    position: relative !important;
+    inset: auto !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 20px 16px 24px 16px !important; /* Align text nicely inside card */
+    z-index: 2 !important;
+    box-shadow: none !important;
+    text-align: left !important;
+    pointer-events: auto !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  .hero-main-text {
+    text-align: left !important;
+    align-items: flex-start !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .hero-subtitle {
+    color: var(--gold) !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 8px !important;
+    text-shadow: none !important;
+  }
+  .hero-title {
+    text-align: left !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 12px !important;
+    line-height: 1.25 !important;
+    text-shadow: none !important;
+  }
+  .hero-desc {
+    text-align: left !important;
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin-bottom: 20px !important;
+    max-width: 100% !important;
+    display: block !important;
+    overflow: visible !important;
+    text-shadow: none !important;
+  }
+  .btn-book-arrow {
+    background: var(--gold) !important;
+    color: var(--black) !important;
+    padding: 8px 8px 8px 18px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+    box-shadow: 0 4px 14px rgba(198, 162, 101, 0.3) !important;
+  }
+  .arrow-circle {
+    background: var(--black) !important;
+    color: var(--gold) !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .hero-floating-tags, .hero-bottom-bar, .hero-arrow-btn, .hero-indicators {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container img { height: 68px !important; }
+  .logo-brand { font-size: 19px !important; }
+  .logo-primary { font-size: 13px !important; }
+  h1, .hero h1 { font-size: 22px !important; }
+}
+
+

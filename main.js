@@ -4,6 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.querySelector('.mobile-menu');
 
   if (hamburger && mobileMenu) {
+    // Inject close button dynamically
+    if (!mobileMenu.querySelector('.mobile-menu-close')) {
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'mobile-menu-close';
+      closeBtn.innerHTML = '&times;';
+      closeBtn.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+      mobileMenu.insertBefore(closeBtn, mobileMenu.firstChild);
+    }
+
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       mobileMenu.classList.toggle('active');
@@ -21,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Hero Slider logic (only if slider elements exist)
   const slides = document.querySelectorAll('.hero-slide');
-  const indicators = document.querySelectorAll('.indicator');
+  const indicators = document.querySelectorAll('.hero-indicators .indicator');
   if (slides.length > 0) {
     let currentSlide = 0;
     const totalSlides = slides.length;
@@ -36,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
       desc: "Providing warm, gentle, and comprehensive dental care to ensure lifelong healthy smiles for your loved ones."
     },
     {
-      subtitle: "Clinical Excellence",
+      subtitle: "Lab Excellence",
       title: "Expert Care by Professional Dentists",
-      desc: "Our experienced clinical team utilizes state-of-the-art procedures to deliver comfortable, pain-free treatments."
+      desc: "Our experienced dental lab team utilizes state-of-the-art procedures to deliver comfortable, pain-free treatments."
     },
     {
       subtitle: "Modern Facilities",
-      title: "Step Into Our Premium Dental Dental Lab",
+      title: "Step Into Our Premium dental lab",
       desc: "Relax in our comfortable waiting lounge, equipped with next-generation sterilization technology and advanced dental chairs."
     }
   ];
@@ -132,6 +144,35 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(nextIndex);
         resetSlideShow();
       });
+    }
+
+    // Swipe Touch Support for mobile (Swiper swipe gestures)
+    let touchstartX = 0;
+    let touchendX = 0;
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+      heroSection.addEventListener('touchstart', (e) => {
+        touchstartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      heroSection.addEventListener('touchend', (e) => {
+        touchendX = e.changedTouches[0].screenX;
+        handleSwipeGesture();
+      }, { passive: true });
+    }
+
+    function handleSwipeGesture() {
+      if (touchendX < touchstartX - 50) {
+        // Swiped Left -> Next Slide
+        let nextIndex = (currentSlide + 1) % totalSlides;
+        showSlide(nextIndex);
+        resetSlideShow();
+      } else if (touchendX > touchstartX + 50) {
+        // Swiped Right -> Prev Slide
+        let prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(prevIndex);
+        resetSlideShow();
+      }
     }
 
     // Set initial active states
@@ -545,12 +586,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Identity & Help
     { keys: ['are you a chatbot', 'are you a real person', 'are you human', 'real person'], answer: "I'm an AI-powered assistant designed to help you quickly find information. If you need a human team member, I can help you get in touch." },
     
-    { keys: ['do you offer teeth whitening', 'teeth whitening'], answer: "Yes, we provide professional teeth whitening trays and custom bleaching solutions for dental clinics." },
-// Core Business
-    { keys: ['treat patients directly', 'patient treatment', 'can i visit as a patient', 'treat patients'], answer: "No. We work exclusively with licensed dentists and dental dental labs. Patients should visit their dentist for treatment." },
-    { keys: ['where is', 'location', 'located', 'where are you'], answer: "We are based in Bengaluru, Karnataka, serving dental dental labs across India." },
-    { keys: ['working hours', 'opening hours', 'when are you open', 'business hours'], answer: "Monday to Saturday: 10:00 AM – 8:00 PM. Sunday: Closed" },
+    { keys: ['do you offer teeth whitening', 'teeth whitening', 'whitening'], answer: "Yes! We provide professional teeth whitening trays and custom bleaching solutions. Our lab-grade whitening delivers up to 8 shades brighter results safely." },
+    // Core Business
+    { keys: ['treat patients directly', 'patient treatment', 'can i visit as a patient', 'treat patients'], answer: "No. We work exclusively with licensed dentists and dental labs. Patients should visit their dentist for treatment." },
+    { keys: ['where is', 'location', 'located', 'where are you', 'dental lab located', 'address'], answer: "📍 We are located at:\nORO HOLD DENTAL LAB,\n2nd Floor, SR Complex,\n3rd Stage, Basaveshwar Nagar,\nBengaluru, Karnataka – 560079.\n\nPhone: +91 9108527755" },
+    { keys: ['working hours', 'opening hours', 'when are you open', 'business hours', 'what are your opening hours', 'open hours', 'timings'], answer: "🕐 Our Opening Hours:\nMonday – Saturday: 10:00 AM – 8:00 PM\nSunday: Closed\n\nFor urgent queries, call us at +91 9108527755." },
     { keys: ['services do you provide', 'what do you make', 'products', 'what do you manufacture'], answer: "We manufacture: Zirconia Crowns, PFM Crowns, E-Max Crowns, Metal Crowns, Veneers, Inlays & Onlays, Dentures, Cast Partial Dentures, Implant Restorations, Surgical Guides, Orthodontic Appliances, Night Guards, Retainers, Splints, Temporary Crowns, and Smile Design." },
+    { keys: ['invisible aligners', 'do you offer invisible aligners', 'clear aligners', 'aligners'], answer: "✅ Yes! We manufacture premium invisible (clear) aligners using high-grade PETG material.\nCustom-fabricated with precision digital workflows for perfect fit.\nContact us at +91 9108527755 for more details." },
+    { keys: ['implant pricing', 'implant price', 'how much does implant cost', 'implant cost'], answer: "For implant pricing, please contact us directly:\n📞 +91 9108527755\n📧 oroholddentallab@gmail.com\nWe offer competitive B2B pricing for all dental professionals." },
+    { keys: ['book appointment', 'book a call', 'schedule appointment', 'i want to book', 'book'], answer: "📅 To book an appointment:\n📞 Call: +91 9108527755\n📧 Email: oroholddentallab@gmail.com\n\nOur team will confirm your slot within 24 hours!" },
     { keys: ['dentures', 'flexible dentures', 'complete dentures'], answer: "Yes. We provide complete, partial, flexible, and premium dentures." },
     { keys: ['cad/cam', 'cad cam', 'cadcam'], answer: "Yes. We use advanced CAD/CAM technology for precise and accurate restorations." },
     { keys: ['file formats', 'which format', 'obj', 'ply', 'stl'], answer: "We accept: STL, PLY, OBJ, DCM, and ZIP Files." },
@@ -566,7 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { keys: ['collect my case', 'collect directly', 'pick up directly'], answer: "Yes, you can collect your case directly from our lab." },
     { keys: ['provide invoices', 'get invoice', 'gst details'], answer: "Yes, we provide official invoices with GST details." },
     { keys: ['warranty', 'guarantee', 'warranty details'], answer: "Warranty depends on the product and usage conditions. Please refer to our product catalogue for details." },
-    { keys: ['recommend the right restoration', 'ai recommend', 'what crown should i choose', 'compare zirconia'], answer: "Our AI assistant can guide dentists based on the provided information, but the final clinical decision remains with the treating dentist." },
+    { keys: ['recommend the right restoration', 'ai recommend', 'what crown should i choose', 'compare zirconia'], answer: "Our AI assistant can guide dentists based on the provided information, but the final dental lab decision remains with the treating dentist." },
     { keys: ['shade consultation', 'request shade guide', 'custom shade'], answer: "Yes, we provide shade consultation for selected cases." },
     { keys: ['custom restoration', 'custom order'], answer: "Yes, you can request custom restorations tailored to specific patient needs." },
   ];
@@ -594,13 +638,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function processUserChatMessage(msg) {
     if (!chatMessages) return;
     
-    // User message render in WhatsApp bubble with blue ticks
+    // User message render (no timestamp shown)
     const userMsgDiv = document.createElement('div');
     userMsgDiv.className = 'chat-message user';
-    const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    userMsgDiv.innerHTML = `${msg}<div class="chat-meta">${timeStr} <span style="color:#53bdeb; margin-left:4px;">✔✔</span></div>`;
+    userMsgDiv.innerHTML = `${msg}`;
     chatMessages.appendChild(userMsgDiv);
-    chatInput.value = '';
+    if (chatInput) chatInput.value = '';
     chatMessages.scrollTop = chatMessages.scrollHeight;
     
     // Add Typing Indicator
@@ -611,34 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
     
     // Bot analysis logic
-    const lang = 'en';
-    const lowerMsg = msg.toLowerCase();
-    
-    let responseText = botDatabase[lang] ? botDatabase[lang].default : botDatabase['en'].default;
-
-    // Search in FAQ Database
-    let found = false;
-    for (let faq of faqDatabase) {
-      if (faq.keys.some(key => lowerMsg.includes(key))) {
-        responseText = faq.answer;
-        found = true;
-        break;
-      }
-    }
-    
-    // Fallbacks if not found (for some regional keywords retained from old logic)
-    if (!found) {
-      } else if (lowerMsg.includes('stl') || lowerMsg.includes('scan') || lowerMsg.includes('format') || lowerMsg.includes('स्कैन') || lowerMsg.includes('ஸ்கேன்') || lowerMsg.includes('ಸ್ಕ್ಯಾನ್') || lowerMsg.includes('స్కాన్')) {
-      } else if (lowerMsg.includes('zirconia') || lowerMsg.includes('material') || lowerMsg.includes('grade') || lowerMsg.includes('crown') || lowerMsg.includes('ज़िरकोनिया') || lowerMsg.includes('சிர்கோனியா') || lowerMsg.includes('ಜಿರ್ಕೋನಿಯಾ') || lowerMsg.includes('జిర్కోనియా')) {
-        responseText = "We offer premium zirconia brands including 3D Pro Multilayer and high-strength solid monolithic zirconia.";
-      } else if (lowerMsg.includes('ship') || lowerMsg.includes('pickup') || lowerMsg.includes('courier') || lowerMsg.includes('कूरियर') || lowerMsg.includes('கூரியர்') || lowerMsg.includes('ಕೊರಿಯర్') || lowerMsg.includes('కొరియర్')) {
-        responseText = "We arrange local courier pickup or use national couriers across India.";
-      } else if (lowerMsg.includes('pain') || lowerMsg.includes('hurt') || lowerMsg.includes('discomfort') || lowerMsg.includes('दर्द') || lowerMsg.includes('வலி') || lowerMsg.includes('ನೋವು') || lowerMsg.includes('నొప్పి')) {
-        responseText = "Please contact your prescribing dentist immediately for any adjustments.";
-      } else if (lowerMsg.includes('time') || lowerMsg.includes('hours') || lowerMsg.includes('timing') || lowerMsg.includes('open') || lowerMsg.includes('समय') || lowerMsg.includes('நேரம்') || lowerMsg.includes('ಸಮಯ')) {
-        responseText = "We are open Monday to Saturday: 9:00 AM – 7:00 PM. Closed on Sundays.";
-      }
-    }
+    let responseText = "ok";
 
     // Bot message render after delay (simulating typing)
     setTimeout(() => {
@@ -649,8 +665,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const botMsgDiv = document.createElement('div');
       botMsgDiv.className = 'chat-message bot';
-      const botTimeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      botMsgDiv.innerHTML = `${responseText}<div class="chat-meta">${botTimeStr}</div>`;
+      // Render newlines as <br> for multi-line answers
+      const formattedResponse = responseText.replace(/\n/g, '<br>');
+      botMsgDiv.innerHTML = `${formattedResponse}`;
       chatMessages.appendChild(botMsgDiv);
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }, 1200);
@@ -1162,8 +1179,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // Card animations removed to guarantee instant visibility on load
+    // Card animations removed to guarantee instant visibility on load
     }
+  }
+
+  // Inject Mobile Bottom Navigation Bar (app-like layout as in SmileMate)
+  if (window.innerWidth <= 768) {
+    const bottomNav = document.createElement('div');
+    bottomNav.className = 'mobile-bottom-nav';
+    bottomNav.innerHTML = `
+      <a href="index.html" class="mobile-bottom-item ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="appointment.html" class="mobile-bottom-item ${window.location.pathname.endsWith('appointment.html') ? 'active' : ''}">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span>Book</span>
+      </a>
+      <a href="services.html" class="mobile-bottom-item ${window.location.pathname.endsWith('services.html') ? 'active' : ''}">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <span>Services</span>
+      </a>
+      <a href="login.html" class="mobile-bottom-item ${window.location.pathname.endsWith('login.html') ? 'active' : ''}">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h3a3 3 0 013 3v1"></path>
+        </svg>
+        <span>Login</span>
+      </a>
+    `;
+    document.body.appendChild(bottomNav);
+    
+    // Add extra padding at the bottom of the body to prevent content from being hidden behind the nav bar
+    document.body.style.paddingBottom = '80px';
   }
 });
 
